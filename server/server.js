@@ -4,7 +4,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
-// const routes = require('./routes');
+const routes = require('./routes');
+const path = require('path');
 
 const port = 3001;
 const app = express();
@@ -12,10 +13,14 @@ const corsOptions = {
 	origin: 'http://localhost:5173',
 };
 
+app.use(express.static(path.resolve('..', 'client', 'dist')));
+
 app.use(cookieParser(), express.json(), cors(corsOptions));
 
-app.get('/', (req, res) => {
-	res.json({ names: ['maks', 'natali', 'lilia'] });
+app.use('/api', routes);
+
+app.get(/(.*)/, (req, res) => {
+	res.sendFile(path.resolve('..', 'client', 'dist', 'index.html'));
 });
 
 mongoose
