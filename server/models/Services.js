@@ -5,6 +5,13 @@ const ServicesSchema = mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	createdAt: {
+		type: Date,
+		default: Date.now,
+		get: (date) => {
+			if (date) return date.toLocaleDateString('ru-RU');
+		},
+	},
 });
 
 const Services = mongoose.model('Services', ServicesSchema);
