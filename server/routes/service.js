@@ -1,5 +1,10 @@
 const express = require('express');
-const { addService, getServices, deleteService } = require('../controllers/service');
+const {
+	addService,
+	getServices,
+	deleteService,
+	editService,
+} = require('../controllers/service');
 const authenticated = require('../middlewares/authenticated');
 const hasRole = require('../middlewares/hasRole');
 const ROLES = require('../constants/roles');
@@ -10,6 +15,14 @@ const router = express.Router({ mergeParams: true });
 router.get('/', async (req, res) => {
 	const service = await getServices();
 	res.send({ data: { services: service.map(mapService) } });
+});
+
+router.patch('/:id', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {
+	const updatedService = await editService(req.params.id, {
+		text: req.body.text,
+	});
+
+	res.send({ data: mapService(updatedService) });
 });
 
 router.delete('/:id', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {

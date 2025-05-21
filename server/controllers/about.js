@@ -6,6 +6,13 @@ function addAbout(about) {
 }
 
 // Edit
+async function editAbout(id, about) {
+	const newAbout = await About.findByIdAndUpdate(id, about, {
+		returnDocument: 'after',
+	});
+
+	return newAbout;
+}
 
 // Delete
 function deleteAbout(id) {
@@ -21,4 +28,5 @@ module.exports = {
 	addAbout,
 	getAbouts,
 	deleteAbout,
+	editAbout,
 };

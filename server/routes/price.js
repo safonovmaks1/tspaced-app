@@ -1,5 +1,5 @@
 const express = require('express');
-const { getPrices, addPrice, deletePrice } = require('../controllers/price');
+const { getPrices, addPrice, deletePrice, editPrice } = require('../controllers/price');
 const authenticated = require('../middlewares/authenticated');
 const hasRole = require('../middlewares/hasRole');
 const ROLES = require('../constants/roles');
@@ -11,6 +11,16 @@ router.get('/', async (req, res) => {
 	const price = await getPrices();
 
 	res.send({ data: { prices: price.map(mapPrice) } });
+});
+
+router.patch('/:id', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {
+	const updatedPrice = await editPrice(req.params.id, {
+		title: req.body.title,
+		price: req.body.price,
+		features: req.body.features,
+	});
+
+	res.send({ data: mapPrice(updatedPrice) });
 });
 
 router.delete('/:id', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {

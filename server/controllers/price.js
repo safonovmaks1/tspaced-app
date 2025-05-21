@@ -6,6 +6,13 @@ function addPrice(price) {
 }
 
 // Edit
+async function editPrice(id, price) {
+	const newPrice = await Price.findByIdAndUpdate(id, price, {
+		returnDocument: 'after',
+	});
+
+	return newPrice;
+}
 
 // Delete
 function deletePrice(id) {
@@ -21,4 +28,5 @@ module.exports = {
 	addPrice,
 	getPrices,
 	deletePrice,
+	editPrice,
 };

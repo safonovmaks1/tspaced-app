@@ -6,6 +6,13 @@ function addService(service) {
 }
 
 // Edit
+async function editService(id, service) {
+	const newService = await Service.findByIdAndUpdate(id, service, {
+		returnDocument: 'after',
+	});
+
+	return newService;
+}
 
 // Delete
 function deleteService(id) {
@@ -21,4 +28,5 @@ module.exports = {
 	addService,
 	getServices,
 	deleteService,
+	editService,
 };

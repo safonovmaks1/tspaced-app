@@ -6,6 +6,13 @@ function addFaq(faq) {
 }
 
 // Edit
+async function editFaq(id, faq) {
+	const newFaq = await Faq.findByIdAndUpdate(id, faq, {
+		returnDocument: 'after',
+	});
+
+	return newFaq;
+}
 
 // Delete
 function deleteFaq(id) {
@@ -21,4 +28,5 @@ module.exports = {
 	addFaq,
 	getFaqs,
 	deleteFaq,
+	editFaq,
 };
