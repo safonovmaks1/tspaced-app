@@ -1,5 +1,5 @@
 const express = require('express');
-const { getFaqs, addFaq } = require('../controllers/faq');
+const { getFaqs, addFaq, deleteFaq } = require('../controllers/faq');
 const authenticated = require('../middlewares/authenticated');
 const hasRole = require('../middlewares/hasRole');
 const ROLES = require('../constants/roles');
@@ -11,6 +11,12 @@ router.get('/', async (req, res) => {
 	const faq = await getFaqs();
 
 	res.send({ data: { faqs: faq.map(mapFaq) } });
+});
+
+router.delete('/:id', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {
+	await deleteFaq(req.params.id);
+
+	res.send({ error: null });
 });
 
 router.post('/', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {

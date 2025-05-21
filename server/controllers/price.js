@@ -5,6 +5,13 @@ function addPrice(price) {
 	return Price.create(price);
 }
 
+// Edit
+
+// Delete
+function deletePrice(id) {
+	return Price.deleteOne({ _id: id });
+}
+
 // Get all
 function getPrices() {
 	return Price.find();
@@ -13,4 +20,5 @@ function getPrices() {
 module.exports = {
 	addPrice,
 	getPrices,
+	deletePrice,
 };

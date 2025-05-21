@@ -5,6 +5,13 @@ function addFaq(faq) {
 	return Faq.create(faq);
 }
 
+// Edit
+
+// Delete
+function deleteFaq(id) {
+	return Faq.deleteOne({ _id: id });
+}
+
 // Get all
 function getFaqs() {
 	return Faq.find();
@@ -13,4 +20,5 @@ function getFaqs() {
 module.exports = {
 	addFaq,
 	getFaqs,
+	deleteFaq,
 };

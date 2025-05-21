@@ -5,6 +5,13 @@ function addWork(work) {
 	return Work.create(work);
 }
 
+// Edit
+
+// Delete
+function deleteWork(id) {
+	return Work.deleteOne({ _id: id });
+}
+
 // Get all
 function getWorks() {
 	return Work.find();
@@ -13,4 +20,5 @@ function getWorks() {
 module.exports = {
 	addWork,
 	getWorks,
+	deleteWork,
 };

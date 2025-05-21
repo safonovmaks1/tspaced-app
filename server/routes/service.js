@@ -1,5 +1,5 @@
 const express = require('express');
-const { addService, getServices } = require('../controllers/service');
+const { addService, getServices, deleteService } = require('../controllers/service');
 const authenticated = require('../middlewares/authenticated');
 const hasRole = require('../middlewares/hasRole');
 const ROLES = require('../constants/roles');
@@ -9,8 +9,12 @@ const router = express.Router({ mergeParams: true });
 
 router.get('/', async (req, res) => {
 	const service = await getServices();
-
 	res.send({ data: { services: service.map(mapService) } });
+});
+
+router.delete('/:id', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {
+	await deleteService(req.params.id);
+	res.send({ error: null });
 });
 
 router.post('/', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {

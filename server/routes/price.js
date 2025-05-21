@@ -1,5 +1,5 @@
 const express = require('express');
-const { getPrices, addPrice } = require('../controllers/price');
+const { getPrices, addPrice, deletePrice } = require('../controllers/price');
 const authenticated = require('../middlewares/authenticated');
 const hasRole = require('../middlewares/hasRole');
 const ROLES = require('../constants/roles');
@@ -11,6 +11,12 @@ router.get('/', async (req, res) => {
 	const price = await getPrices();
 
 	res.send({ data: { prices: price.map(mapPrice) } });
+});
+
+router.delete('/:id', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {
+	await deletePrice(req.params.id);
+
+	res.send({ error: null });
 });
 
 router.post('/', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {

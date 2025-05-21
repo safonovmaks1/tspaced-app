@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ServicesSchema = mongoose.Schema({
+const ServiceSchema = mongoose.Schema({
 	text: {
 		type: String,
 		required: true,
@@ -14,6 +14,6 @@ const ServicesSchema = mongoose.Schema({
 	},
 });
 
-const Services = mongoose.model('Services', ServicesSchema);
+const Service = mongoose.model('Service', ServiceSchema);
 
-module.exports = Services;
+module.exports = Service;
