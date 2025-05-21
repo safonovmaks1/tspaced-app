@@ -55,6 +55,8 @@ router.post('/', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {
 	const newPost = await addPost({
 		title: req.body.title,
 		content: req.body.content,
+		location: req.body.location,
+		year: req.body.year,
 		image: req.body.imageUrl,
 	});
 
@@ -65,6 +67,8 @@ router.patch('/:id', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => 
 	const updatedPost = await editPost(req.params.id, {
 		title: req.body.title,
 		content: req.body.content,
+		location: req.body.location,
+		year: req.body.year,
 		image: req.body.imageUrl,
 	});
 

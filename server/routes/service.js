@@ -1,0 +1,23 @@
+const express = require('express');
+const { addService, getServices } = require('../controllers/service');
+const authenticated = require('../middlewares/authenticated');
+const hasRole = require('../middlewares/hasRole');
+const ROLES = require('../constants/roles');
+const mapService = require('../helpers/mapService');
+
+const router = express.Router({ mergeParams: true });
+
+router.get('/', async (req, res) => {
+	const service = await getServices();
+
+	res.send({ data: { services: service.map(mapService) } });
+});
+
+router.post('/', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {
+	const newService = await addService({
+		text: req.body.text,
+	});
+	res.send({ data: mapService(newService) });
+});
+
+module.exports = router;
