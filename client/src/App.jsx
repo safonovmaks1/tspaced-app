@@ -31,6 +31,7 @@ const router = createBrowserRouter(
 
 			<Route path="/contact" element={<ContactPage />} />
 			<Route path="/privacy" element={<PrivacyPage />} />
+			
 			<Route path="*" element={<ErrorPage />} />
 		</Route>,
 	),
