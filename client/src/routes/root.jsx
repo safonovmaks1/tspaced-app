@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Footer, Header, Main } from '../components';
+import { CookieConsent, Footer, Header, Main } from '../components';
 
 export const Root = () => {
 	return (
@@ -9,6 +9,7 @@ export const Root = () => {
 				<Outlet />
 			</Main>
 			<Footer />
+			<CookieConsent />
 		</div>
 	);
 };

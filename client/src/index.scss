@@ -6,12 +6,12 @@
 	--container-padding-x: 1rem;
 
 	/*  Colors  */
-	--hue: 150;
+	--hue: 155;
 
 	/* Light Theme */
 	--first-color: hsl(var(--hue) 24% 36%);
 	--first-color-second: hsl(var(--hue) 20% 32%);
-	--first-color-alt: hsl(var(--hue) 20% 28%);
+	--first-color-alt: hsl(var(--hue) 40% 30%);
 	--first-color-light: hsl(var(--hue) 24% 82%);
 	--first-color-lighten: hsl(var(--hue) 20% 90%);
 	--title-color: hsl(var(--hue) 8% 24%);
@@ -54,6 +54,13 @@
 	/* z index  */
 	--z-tooltip: 10;
 	--z-fixed: 100;
+	--z-modal: 200;
+
+	/* border radius */
+	--border-radius: 0.5rem;
+	--border-radius-sm: 0.25rem;
+	--border-radius-lg: 0.75rem;
+	--border-radius-xl: 1rem;
 
 	@media screen and (width >= 968px) {
 		--big-font-size: 2.5rem;
@@ -90,7 +97,7 @@ body {
 
 	font-family: var(--body-font);
 
-	text-align: center; // Delete this
+	// text-align: center; // Delete this
 
 	background-color: var(--body-color);
 
