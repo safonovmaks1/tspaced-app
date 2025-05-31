@@ -1,8 +1,7 @@
 import { RiArrowRightDownLine } from '@remixicon/react';
 import heroImages from '../../../../assets/images/hero.jpeg';
-import { Icon, ImageContainer } from '../../../../components';
-import b from '../../../../components/Button/Button.module.scss';
-import { Container, Section } from '../../../../shared';
+import { Container, Icon, ImageContainer, Section } from '../../../../shared';
+import b from '../../../../shared/Button/Button.module.scss';
 import s from './Hero.module.scss';
 import { SocialPanel } from './components/SocialPanel/SocialPanel';
 
@@ -20,6 +19,7 @@ export const Hero = () => {
 					<img
 						src={heroImages}
 						alt="TSpace — проектирую пространство для Тебя"
+						loading="lazy"
 					/>
 				</ImageContainer>
 
@@ -32,7 +32,7 @@ export const Hero = () => {
 					<div className={s.heroDescription}>
 						<p>
 							Создаю уникальные интерьеры, которые отражают индивидуальность
-							и&nbsp;стиль жизни своих клиентов.
+							и&nbsp;стиль жизни моих клиентов.
 						</p>
 					</div>
 

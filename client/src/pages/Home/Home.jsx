@@ -1,12 +1,18 @@
 import { useChangeDocumentTitle } from '../../hooks';
-import { Hero } from './components';
+import { About, Faqs, Hero, Portfolio, Price, Service, Works } from './components';
 
 export const Home = () => {
-	useChangeDocumentTitle('My React App');
+	useChangeDocumentTitle('Заказать дизайн-проект!');
 
 	return (
 		<>
 			<Hero />
+			<About />
+			<Service />
+			<Portfolio />
+			<Price />
+			<Works />
+			<Faqs />
 		</>
 	);
 };

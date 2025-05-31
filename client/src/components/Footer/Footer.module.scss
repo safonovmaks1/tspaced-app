@@ -1,0 +1,89 @@
+.footer {
+	margin-top: auto;
+	padding: 2rem 0;
+
+	@media screen and (width >= 992px) {
+		padding: 3rem 0;
+	}
+
+	&Container {
+		display: grid;
+		row-gap: 1rem;
+
+		text-align: center;
+	}
+
+	&ContentContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		align-items: center;
+		justify-content: space-between;
+
+		@media screen and (width >= 767px) {
+			flex-direction: row;
+		}
+	}
+
+	&Logo {
+		color: var(--title-color);
+	}
+
+	&Nav {
+		&List {
+			display: flex;
+			flex-direction: column;
+			row-gap: 1rem;
+
+			@media screen and (width >= 767px) {
+				flex-direction: row;
+
+				column-gap: 1.1rem;
+			}
+		}
+
+		&Link {
+			color: var(--title-color);
+			font-weight: var(--font-medium);
+		}
+	}
+
+	&Socials {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		justify-content: center;
+
+		&Link {
+			transition: 0.3s;
+
+			&:hover {
+				transform: translateY(-0.25rem);
+			}
+		}
+	}
+
+	&Copy {
+		margin: 0.5rem 0;
+	}
+
+	&Dev {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		margin-top: var(--mb-0-5);
+
+		& a {
+			display: inline-flex;
+			gap: 0.4rem;
+			align-items: center;
+
+			color: var(--title-color);
+			font-size: var(--small-font-size);
+		}
+	}
+}
+
+.footerLinkActive {
+	color: var(--first-color);
+}

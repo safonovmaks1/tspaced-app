@@ -1,0 +1,61 @@
+.work {
+	&Sections {
+		margin-top: var(--mb-2-5);
+
+		@media screen and (width >= 576px) {
+			display: grid;
+			justify-content: center;
+		}
+
+		@media screen and (width >= 767px) {
+			grid-template-columns: 0.7fr;
+		}
+	}
+
+	&Data {
+		display: grid;
+		grid-template-columns: 1fr max-content 1fr;
+
+		column-gap: 1.5rem;
+
+		@media screen and (width <= 320px) {
+			column-gap: 0.5rem;
+		}
+	}
+
+	&Title {
+		margin-bottom: var(--mb-1-5);
+
+		font-weight: var(--font-medium);
+		font-size: var(--normal-font-size);
+	}
+
+	&Subtitle {
+		display: inline-block;
+		margin-bottom: 1rem;
+
+		font-size: 0.875rem;
+
+		p:not(:last-child) {
+			margin-bottom: 0.4rem;
+		}
+	}
+
+	&Rounder {
+		display: inline-block;
+		width: 13px;
+		height: 13px;
+
+		background-color: var(--first-color);
+		border-radius: 50%;
+	}
+
+	&Line {
+		display: block;
+		width: 1px;
+		height: 100%;
+
+		background-color: var(--first-color);
+		transform: translate(6px, -7px);
+	}
+}

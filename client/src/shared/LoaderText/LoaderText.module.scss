@@ -1,0 +1,33 @@
+.loaderText {
+	padding-block: 2rem;
+
+	color: var(--title-color);
+	font-size: 1rem;
+	text-align: center;
+
+	&.white {
+		color: white;
+	}
+}
+
+.loaderText::before {
+	display: inline-block;
+
+	animation: loading 2s infinite linear;
+
+	content: attr(data-text);
+}
+
+@keyframes loading {
+	0% {
+		opacity: 0.2;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0.2;
+	}
+}

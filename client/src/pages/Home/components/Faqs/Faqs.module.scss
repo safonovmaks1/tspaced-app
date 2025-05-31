@@ -1,0 +1,16 @@
+/* stylelint-disable selector-class-pattern */
+.faq {
+	background-color: var(--first-color-lighten);
+
+	&Container {
+		display: grid;
+		gap: 1.5rem;
+		padding: 1.5rem 0;
+	}
+}
+
+[data-theme='dark'] .faq {
+	background-color: var(--first-color-dark);
+}
+
+

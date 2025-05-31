@@ -1,0 +1,18 @@
+.privacy {
+	color: var(--title-color);
+	font-size: var(--small-font-size);
+
+	&Title {
+		font-size: var(--h2-font-size);
+	}
+
+	& span {
+		display: block;
+		margin-bottom: var(--mb-1);
+		margin-left: 1rem;
+
+		font-weight: var(--font-medium);
+
+		font-size: var(--normal-font-size);
+	}
+}

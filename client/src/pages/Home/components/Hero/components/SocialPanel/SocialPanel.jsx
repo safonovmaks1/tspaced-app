@@ -1,5 +1,6 @@
 import { RiInstagramLine, RiTelegramLine, RiWhatsappLine } from '@remixicon/react';
-import { Icon } from '../../../../../../components';
+import { Link } from 'react-router-dom';
+import { Icon } from '../../../../../../shared';
 import s from './SocialPanel.module.scss';
 
 export const SocialPanel = () => {
@@ -39,7 +40,7 @@ export const SocialPanel = () => {
 
 			<div className={s.socialPanelLinks}>
 				{socials.map((link, index) => (
-					<a
+					<Link
 						key={index}
 						href={link.url}
 						target="_blank"
@@ -47,7 +48,7 @@ export const SocialPanel = () => {
 						aria-label={link.ariaLabel}
 						className={s.socialPanelLink}>
 						{link.icon}
-					</a>
+					</Link>
 				))}
 			</div>
 		</div>
