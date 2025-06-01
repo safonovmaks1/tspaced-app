@@ -1,0 +1,12 @@
+.portfolio {
+	&Text {
+		margin-bottom: var(--mb-2-5);
+
+		text-align: center;
+	}
+
+	&Slider {
+		display: grid;
+		gap: 1rem;
+	}
+}

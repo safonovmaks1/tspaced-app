@@ -1,0 +1,25 @@
+/* stylelint-disable selector-class-pattern */
+.swiper {
+	width: 100%;
+	height: 100%;
+}
+
+.swiper-slide img {
+	display: block;
+
+	object-fit: cover;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+	color: var(--first-color);
+}
+
+.swiper-pagination-bullet-active {
+	background-color: var(--first-color);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	outline: none;
+}
