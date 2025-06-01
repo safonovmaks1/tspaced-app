@@ -6,5 +6,6 @@ export * from './Input/Input';
 export * from './Loader/Loader';
 export * from './LoaderText/LoaderText';
 export * from './Logo/Logo';
+export * from './PrivateContent/PrivateContent';
 export * from './Section/Section';
 export * from './Title/Title';

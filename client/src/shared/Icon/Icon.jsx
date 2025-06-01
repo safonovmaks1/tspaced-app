@@ -7,7 +7,6 @@ export const Icon = ({
 	viewBox = '0 0 24 24',
 	size = '',
 	color = '',
-	animate = '',
 	width,
 	height,
 	...props
@@ -19,7 +18,7 @@ export const Icon = ({
 			viewBox={viewBox}
 			width={width || size}
 			height={height || size}
-			className={cn(s.icon, s[color], s[animate], className)}
+			className={cn(s.icon, s[color], className)}
 			{...props}>
 			{children}
 		</svg>

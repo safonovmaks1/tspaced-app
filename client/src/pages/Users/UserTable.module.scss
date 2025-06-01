@@ -1,0 +1,55 @@
+.user {
+	&Container {
+		max-width: 800px;
+		margin: 2rem auto;
+		padding: 20px;
+
+		border-radius: 12px;
+		box-shadow: 0 4px 20px rgb(0 0 0 / 18%);
+	}
+
+	&Table {
+		width: 100%;
+		overflow: hidden;
+
+		border-radius: 8px;
+		border-collapse: collapse;
+		box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+
+		th,
+		td {
+			padding: 8px 16px;
+
+			text-align: left;
+		}
+
+		thead {
+			th {
+				font-weight: 600;
+				font-size: 1rem;
+			}
+		}
+
+		tbody {
+			tr {
+				border-bottom: 1px solid #f0f2f5;
+
+				&:nth-child(even) {
+					background-color: #f9fbfd;
+				}
+
+				&:last-child {
+					border-bottom: none;
+				}
+
+				td {
+					font-size: 0.95rem;
+
+					&:first-child {
+						font-weight: 500;
+					}
+				}
+			}
+		}
+	}
+}
