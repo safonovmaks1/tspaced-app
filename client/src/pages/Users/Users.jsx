@@ -49,31 +49,33 @@ export const UsersPage = () => {
 				<Container>
 					<Title>Пользователи</Title>
 					<div className={s.userContainer}>
-						<table className={s.userTable}>
-							<thead>
-								<tr>
-									<th>Логин</th>
-									<th>Дата регистрации</th>
-									<th>Роль</th>
-								</tr>
-							</thead>
+						<div className={s.userTableWrapper}>
+							<table className={s.userTable}>
+								<thead>
+									<tr>
+										<th>Логин</th>
+										<th>Дата регистрации</th>
+										<th>Роль</th>
+									</tr>
+								</thead>
 
-							<tbody>
-								{users.map(({ id, login, registeredAt, roleId }) => (
-									<UsersTableRow
-										key={id}
-										id={id}
-										login={login}
-										registeredAt={registeredAt}
-										roleId={roleId}
-										roles={roles.filter(
-											({ id: roleId }) => roleId !== ROLE.GUEST,
-										)}
-										onUserRemove={() => onUserRemove(id)}
-									/>
-								))}
-							</tbody>
-						</table>
+								<tbody>
+									{users.map(({ id, login, registeredAt, roleId }) => (
+										<UsersTableRow
+											key={id}
+											id={id}
+											login={login}
+											registeredAt={registeredAt}
+											roleId={roleId}
+											roles={roles.filter(
+												({ id: roleId }) => roleId !== ROLE.GUEST,
+											)}
+											onUserRemove={() => onUserRemove(id)}
+										/>
+									))}
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</Container>
 			</Section>
