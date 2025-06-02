@@ -8,4 +8,5 @@ export * from './LoaderText/LoaderText';
 export * from './Logo/Logo';
 export * from './PrivateContent/PrivateContent';
 export * from './Section/Section';
+export * from './SlicedText/SlicedText';
 export * from './Title/Title';

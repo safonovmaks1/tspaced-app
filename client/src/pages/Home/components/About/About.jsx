@@ -10,7 +10,7 @@ import {
 	Section,
 	Title,
 } from '../../../../shared';
-import { request } from '../../../../utils/request';
+import { request } from '../../../../utils';
 import s from './About.module.scss';
 
 export const About = () => {
@@ -42,7 +42,7 @@ export const About = () => {
 					</Title>
 
 					{isLoading ? (
-						<LoaderText text='Загрузка данных...' />
+						<LoaderText text="Загрузка данных..." />
 					) : (
 						<ul className={s.aboutList}>
 							{abouts.map(({ id, text }) => (

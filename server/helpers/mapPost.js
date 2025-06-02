@@ -9,9 +9,9 @@ module.exports = function (post) {
 		content: post.content,
 		location: post.location,
 		year: post.year,
+		publishedAt: post.createdAt,
 		comments: post.comments.map((comment) =>
 			mongoose.isObjectIdOrHexString(comment) ? comment : mapComment(comment),
 		),
-		publishedAt: post.createdAt,
 	};
 };
