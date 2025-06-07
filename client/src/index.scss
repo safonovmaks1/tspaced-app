@@ -1,38 +1,123 @@
+@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
+
 :root {
-	color: rgb(255 255 255 / 87%);
-	font-weight: 400;
-	font-family: system-ui, 'Avenir', 'Helvetica', 'Arial', sans-serif;
-	line-height: 1.5;
+	--header-height: 3.5rem;
+	--container-width: 1170px;
+	--container-padding-x: 1rem;
 
-	background-color: #242424;
+	/*  Colors  */
+	--hue: 152;
 
-	color-scheme: light dark;
+	/* Light Theme */
+	--first-color: hsl(var(--hue) 24% 32%);
+	--first-color-alt: hsl(var(--hue) 24% 28%);
+	--first-color-light: hsl(var(--hue) 24% 66%);
+	--first-color-lighten: hsl(var(--hue) 24% 92%);
+	--title-color: hsl(var(--hue) 4% 15%);
+	--text-color: hsl(var(--hue) 4% 35%);
+	--text-color-light: hsl(var(--hue) 4% 55%);
+	--body-color: hsl(var(--hue) 0% 100%);
+	--container-color: #fff;
+
+	/* Эффекты */
+	--shadow: 0 2px 12px hsl(var(--hue) 25% 25% / 26%);
+	--transition-time: 0.3s;
+
+	/*  Font and typography  */
+	--body-font: 'Roboto', sans-serif;
+	--big-font-size: 2rem;
+	--h1-font-size: 1.5rem;
+	--h2-font-size: 1.25rem;
+	--h3-font-size: 1rem;
+	--normal-font-size: 0.938rem;
+	--small-font-size: 0.813rem;
+	--smaller-font-size: 0.75rem;
+
+	/*  Font weight */
+	--font-light: 300;
+	--font-regular: 400;
+	--font-bold: 700;
+	--font-semi-bold: 600;
+
+	/* Margin Bottom .5rem = 8px | 1rem = 16px ... */
+	--mb-0-5: 0.5rem;
+	--mb-0-75: 0.75rem;
+	--mb-1: 1rem;
+	--mb-1-5: 1.5rem;
+	--mb-2: 2rem;
+	--mb-2-5: 2.5rem;
+
+	/* z index  */
+	--z-tooltip: 10;
+	--z-fixed: 100;
+	--z-modal: 200;
+
+	/* border radius */
+	--border-radius: 0.5rem;
+	--border-radius-sm: 0.25rem;
+	--border-radius-lg: 0.75rem;
+	--border-radius-xl: 1rem;
+
+	@media screen and (width >= 968px) {
+		--big-font-size: 2.5rem;
+		--h1-font-size: 2.25rem;
+		--h2-font-size: 1.5rem;
+		--h3-font-size: 1.25rem;
+		--normal-font-size: 1rem;
+		--small-font-size: 0.875rem;
+		--smaller-font-size: 0.813rem;
+	}
+}
+
+[data-theme='dark'] {
+	--first-color-dark: hsl(var(--hue) 8% 20%);
+	--first-color-second: hsl(var(--hue) 8% 20%);
+	--title-color: hsl(var(--hue) 4% 95%);
+	--text-color: hsl(var(--hue) 4% 75%);
+	--body-color: hsl(var(--hue) 10% 12%);
+	--container-color: hsl(var(--hue) 8% 16%);
+	--input-color: hsl(var(--hue) 29% 16%);
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+.App {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100dvh;
 }
 
 body {
-	display: flex;
-	justify-content: center;
-	min-width: 320px;
-	min-height: 100vh;
-	place-items: center;
+	margin: var(--header-height) 0 0 0;
+
+	color: var(--text-color);
+	font-weight: var(--font-regular);
+	font-size: var(--normal-font-size);
+
+	font-family: var(--body-font);
+
+	background-color: var(--body-color);
+
+	transition: background-color 0.4s ease, color var(--transition-time) ease;
 
 	font-synthesis: none;
 	text-rendering: optimizelegibility;
-
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
 
-h1 {
-	font-size: 3.2em;
-	line-height: 1.1;
-	text-align: center;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		color: #213547;
-
-		background-color: #fff;
+	@media screen and (width >= 767px) {
+		margin: 0;
 	}
+}
+
+h1,
+h2,
+h3 {
+	color: var(--title-color);
+	font-weight: var(--font-bold);
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
 }

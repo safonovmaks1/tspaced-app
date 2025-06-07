@@ -1,1 +1,9 @@
-
+export * from './ContactPage/ContactPage';
+export * from './ErrorPage/ErrorPage';
+export * from './HomePage/HomePage';
+export * from './LoginPage/LoginPage';
+export * from './PortfolioPage/PortfolioPage';
+export * from './PostPage/PostPage';
+export * from './PrivacyPage/PrivacyPage';
+export * from './RegisterPage/RegisterPage';
+export * from './UsersPage/UsersPage';
