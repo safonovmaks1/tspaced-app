@@ -41,8 +41,8 @@ export const AboutSection = () => {
 						<ul className={s.aboutList}>
 							{abouts.map(({ id, text }) => (
 								<li key={id} className={s.aboutListText}>
-									<Icon size="16" color="white">
-										<RiCheckboxFill />
+									<Icon color="white">
+										<RiCheckboxFill size="18" />
 									</Icon>
 									<span className={s.aboutListDescr}>{text}</span>
 								</li>

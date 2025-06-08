@@ -30,7 +30,7 @@ export const HeroSection = () => {
 						</p>
 					</div>
 
-					<ScrollLink to="#about" className={cn(b.button, s.heroLink)}>
+					<ScrollLink to="about" className={cn(b.button, s.heroLink)}>
 						Обо мне
 						<Icon color="white">
 							<RiArrowRightDownLine size="24" />
