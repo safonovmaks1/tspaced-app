@@ -1,0 +1,7 @@
+.section {
+	padding: 5.5rem 0 1rem;
+
+	@media screen and (width >= 992px) {
+		padding: 8rem 0 5rem;
+	}
+}

@@ -1,0 +1,4 @@
+.container {
+	width: min(var(--container-width), 100% - (var(--container-padding-x) * 2));
+	margin: 0 auto;
+}

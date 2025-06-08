@@ -1,0 +1,84 @@
+.hero {
+	padding: 3.5rem 0 2rem;
+
+	&Container {
+		position: relative;
+
+		display: grid;
+		row-gap: 2rem;
+	}
+
+	&Image {
+		order: 0;
+		width: 280px;
+		margin: 0 auto;
+	}
+
+	&Data {
+		text-align: center;
+	}
+
+	&Title {
+		margin-bottom: var(--mb-1);
+
+		font-size: var(--big-font-size);
+		line-height: 1.2;
+	}
+
+	&Description {
+		margin-bottom: var(--mb-2-5);
+	}
+
+	&Link {
+		display: inline-flex;
+		align-items: center;
+
+		& span {
+			display: inline-flex;
+			align-items: center;
+		}
+	}
+}
+
+@media screen and (width <= 320px) {
+	.hero {
+		&Image {
+			width: 180px;
+		}
+
+		&Title {
+			font-size: var(--h1-font-size);
+		}
+	}
+}
+
+@media screen and (width >= 767px) {
+	.hero {
+		padding: 8rem 0 5rem;
+
+		&Container {
+			grid-template-columns: repeat(2, 1fr);
+			align-items: center;
+		}
+
+		&Image {
+			order: 1;
+		}
+
+		&Data {
+			text-align: initial;
+		}
+	}
+}
+
+@media screen and (width >= 992px) {
+	.hero {
+		&Image {
+			width: 390px;
+		}
+
+		&Data {
+			padding-right: 7rem;
+		}
+	}
+}

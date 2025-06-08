@@ -11,6 +11,8 @@
 	},
 	"dependencies": {
 		"@a1rth/css-normalize": "^1.1.9",
+		"@remixicon/react": "^4.6.0",
+		"classnames": "^2.5.1",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"react-redux": "^9.2.0",

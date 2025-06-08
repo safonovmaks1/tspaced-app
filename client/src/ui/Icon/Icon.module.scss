@@ -1,0 +1,30 @@
+.icon {
+	& svg {
+		transition: all 0.3s;
+
+		&.darken {
+			fill: var(--title-color);
+		}
+
+		&.color {
+			fill: var(--first-color);
+		}
+
+		&.white {
+			fill: #fff;
+		}
+
+		&.del {
+			fill: var(--title-color);
+
+			&:hover {
+				fill: red;
+			}
+		}
+
+		&:disabled {
+			background-color: gray;
+			cursor: not-allowed;
+		}
+	}
+}
