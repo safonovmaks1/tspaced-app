@@ -1,0 +1,49 @@
+.contact {
+	padding-bottom: 2rem;
+
+	&Container {
+		display: grid;
+		gap: 2rem;
+
+		text-align: center;
+
+		@media screen and (width >= 767px) {
+			grid-template-columns: repeat(2, 1fr);
+
+			text-align: initial;
+		}
+	}
+
+	&Data {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+
+	&Info {
+		&Title {
+			margin-bottom: var(--mb-0-5);
+
+			color: var(--text-color);
+			font-weight: var(--font-bold);
+			font-size: var(--h3-font-size);
+		}
+
+		&Link {
+			display: inline-flex;
+			align-items: center;
+
+			color: var(--title-color);
+			font-weight: var(--font-medium);
+			column-gap: 0.3rem;
+
+			& span {
+				display: flex;
+			}
+
+			&:hover{
+				color: var(--first-color);
+			}
+		}
+	}
+}

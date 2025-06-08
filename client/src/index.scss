@@ -6,7 +6,7 @@
 	--container-padding-x: 1rem;
 
 	/*  Colors  */
-	--hue: 152;
+	--hue: 150;
 
 	/* Light Theme */
 	--first-color: hsl(var(--hue) 24% 32%);
@@ -83,7 +83,6 @@
 .App {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	min-height: 100dvh;
 }
 

@@ -1,0 +1,40 @@
+.prices {
+	&Bg {
+		padding: 3rem 1rem 2rem;
+
+		background-color: var(--first-color);
+		border-radius: 1rem;
+	}
+
+	&CardContainer {
+		display: grid;
+		gap: 1rem;
+		margin-bottom: 2rem;
+		padding-top: 1rem;
+	}
+
+	&Button {
+		display: flex;
+		justify-content: center;
+
+		& span {
+			display: flex;
+		}
+	}
+}
+
+@media screen and (width >= 767px) {
+	.prices {
+		&CardContainer {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+}
+
+@media screen and (width >= 992px) {
+	.prices {
+		&Bg {
+			padding: 3rem 2rem;
+		}
+	}
+}

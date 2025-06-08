@@ -1,0 +1,86 @@
+/* stylelint-disable selector-class-pattern */
+.portfolio {
+	&Text {
+		margin-bottom: var(--mb-2-5);
+
+		text-align: center;
+	}
+
+	&Slider {
+		&Content {
+			display: grid;
+			gap: 1rem;
+			align-items: center;
+			padding: 0 1rem;
+
+			text-align: center;
+
+			@media screen and (width >= 767px) {
+				grid-template-columns: repeat(2, 1fr);
+
+				text-align: left;
+			}
+
+			@media screen and (width >= 992px) {
+				column-gap: 1rem;
+			}
+		}
+
+		&Images {
+			width: 280px;
+			height: 280px;
+			margin: 0 auto;
+
+			border-radius: var(--border-radius-lg);
+
+			@media screen and (width >= 992px) {
+				width: 400px;
+				height: 310px;
+			}
+		}
+
+		&Data {
+			display: grid;
+
+			width: 85%;
+			padding: 3rem 0;
+			row-gap: 1.5rem;
+
+			@media screen and (width <= 767px) {
+				width: 100%;
+				padding: 0.5rem 0 3rem;
+			}
+		}
+
+		&Title {
+			margin-bottom: var(--mb-0-5);
+		}
+
+		&Text {
+			margin-bottom: var(--mb-0-5);
+		}
+
+		&Info {
+			display: flex;
+			gap: 0.5rem;
+			align-items: center;
+			justify-content: center;
+
+			@media screen and (width >= 767px) {
+				justify-content: flex-start;
+			}
+		}
+
+		&Button {
+			width: fit-content;
+
+			& span {
+				display: inline-flex;
+			}
+
+			@media screen and (width <= 767px) {
+				margin: 0 auto;
+			}
+		}
+	}
+}

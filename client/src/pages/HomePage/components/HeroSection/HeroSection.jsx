@@ -4,7 +4,9 @@ import heroImages from '../../../../assets/images/hero.jpeg';
 import { ScrollLink } from '../../../../components';
 import { Container, Icon, ImageContainer, Section } from '../../../../ui';
 import b from '../../../../ui/Button/Button.module.scss';
+import { socialLinks } from '../../../../utils';
 import s from './HeroSection.module.scss';
+import { SocialPanel } from './components/SocialPanel/SocialPanel';
 
 export const HeroSection = () => {
 	return (
@@ -37,6 +39,8 @@ export const HeroSection = () => {
 						</Icon>
 					</ScrollLink>
 				</div>
+
+				<SocialPanel socials={socialLinks} />
 			</Container>
 		</Section>
 	);

@@ -1,0 +1,13 @@
+.question {
+	background-color: var(--first-color-lighten);
+
+	&Container {
+		display: grid;
+		gap: 1.5rem;
+		padding: 1.5rem 0;
+	}
+}
+
+[data-theme='dark'] .question {
+	background-color: var(--first-color-dark);
+}

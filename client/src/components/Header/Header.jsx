@@ -17,9 +17,7 @@ export const Header = () => {
 
 	return (
 		<header className={headerFixed ? `${s.header} ${s.scrollHeader}` : s.header}>
-			<div>
-				<h3 style={{ textAlign: 'center' }}>Welcome to My Website</h3>
-			</div>
+			<h3 style={{ textAlign: 'center' }}>Welcome to My Website</h3>
 		</header>
 	);
 };

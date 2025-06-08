@@ -1,7 +1,7 @@
 export const Footer = () => {
 	return (
 		<footer>
-			<p>
+			<p style={{ textAlign: 'center' }}>
 				&copy; {new Date().getFullYear()} Your Company Name. All rights reserved.
 			</p>
 		</footer>

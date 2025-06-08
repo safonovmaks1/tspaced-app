@@ -1,0 +1,10 @@
+.slicedText {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: var(--width);
+	line-clamp: var(--width);
+
+	overflow: hidden;
+
+	text-overflow: ellipsis;
+}

@@ -1,0 +1,56 @@
+.card {
+	padding: 2.5rem 3rem 2rem 1.5rem;
+
+	background-color: var(--container-color);
+	border-radius: 1rem;
+	box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+
+	transition: transform 0.4s;
+
+	&:hover {
+		box-shadow: 0 4px 8px rgb(0 0 0 / 30%);
+		transform: translateY(-0.05rem);
+	}
+
+	&Title {
+		margin-bottom: var(--mb-0-5);
+
+		color: var(--title-color);
+		font-size: var(--h1-font-size);
+
+		@media screen and (width >= 992px) {
+			font-size: var(--normal-font-size);
+		}
+	}
+
+	&Pricing {
+		margin-bottom: var(--mb-2);
+
+		color: var(--title-color);
+
+		font-size: var(--h3-font-size);
+		letter-spacing: 0.1rem;
+	}
+
+	&List {
+		margin-left: 0.9rem;
+
+		list-style-type: decimal;
+
+		&Item {
+			width: 95%;
+
+			font-size: var(--small-font-size);
+
+			&:not(:last-child) {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+}
+
+@media screen and (width <= 320px) {
+	.card {
+		padding: 1rem;
+	}
+}
