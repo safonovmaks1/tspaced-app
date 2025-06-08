@@ -1,7 +1,13 @@
+import { Container, Section } from '../../ui';
+
 export const PrivacyPage = () => {
 	return (
-		<div>
-			<h1>PrivacyPage</h1>
-		</div>
+		<Section>
+			<Container>
+				<div>
+					<h1>PrivacyPage</h1>
+				</div>
+			</Container>
+		</Section>
 	);
 };

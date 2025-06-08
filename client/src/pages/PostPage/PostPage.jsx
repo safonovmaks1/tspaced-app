@@ -1,7 +1,13 @@
+import { Container, Section } from '../../ui';
+
 export const PostPage = () => {
 	return (
-		<div>
-			<h1>PostPage</h1>
-		</div>
+		<Section>
+			<Container>
+				<div>
+					<h1>PostPage</h1>
+				</div>
+			</Container>
+		</Section>
 	);
 };

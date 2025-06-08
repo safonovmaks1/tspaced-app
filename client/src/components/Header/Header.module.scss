@@ -1,0 +1,16 @@
+.header {
+	position: fixed;
+	top: 0;
+	z-index: var(--z-fixed);
+
+	width: 100%;
+	padding: 0.25rem 0;
+
+	background-color: var(--body-color);
+
+	transition: all var(--transition-time) ease-in-out;
+}
+
+.scrollHeader {
+	box-shadow: 0 1px 5px hsl(var(--hue) 20% 30% / 80%);
+}

@@ -1,7 +1,13 @@
+import { Container, Section } from '../../ui';
+
 export const ErrorPage = () => {
 	return (
-		<div>
-			<h1>ErrorPage</h1>
-		</div>
+		<Section>
+			<Container>
+				<div>
+					<h1>ErrorPage</h1>
+				</div>
+			</Container>
+		</Section>
 	);
 };

@@ -1,7 +1,13 @@
+import { Container, Section } from '../../ui';
+
 export const ContactPage = () => {
 	return (
-		<div>
-			<h1>ContactPage</h1>
-		</div>
+		<Section>
+			<Container>
+				<div>
+					<h1>ContactPage</h1>
+				</div>
+			</Container>
+		</Section>
 	);
 };
