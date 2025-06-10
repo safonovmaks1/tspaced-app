@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Navigation } from '../Navigation/Navigation';
 import s from './Header.module.scss';
 
 export const Header = () => {
@@ -17,7 +18,7 @@ export const Header = () => {
 
 	return (
 		<header className={headerFixed ? `${s.header} ${s.scrollHeader}` : s.header}>
-			<h3 style={{ textAlign: 'center' }}>Welcome to My Website</h3>
+			<Navigation />
 		</header>
 	);
 };

@@ -1,0 +1,50 @@
+.scrollUp {
+	position: fixed;
+	right: 1rem;
+	bottom: -30%;
+	z-index: var(--z-tooltip);
+
+	display: inline-flex;
+	padding: 0.5rem;
+
+	background: var(--first-color);
+	border-radius: 0.25rem;
+	cursor: pointer;
+	opacity: 0.6;
+
+	transition: var(--transition-time);
+	animation: loading 2s infinite linear;
+
+	@media screen and (width >= 1200px) {
+		right: 3rem;
+	}
+
+	&Icon {
+		width: 1.2rem;
+		height: 1.2rem;
+
+		fill: #fff;
+	}
+}
+
+.scrollUpShow {
+	bottom: 3rem;
+}
+
+.scrollUphide {
+	bottom: -30%;
+}
+
+@keyframes loading {
+	0% {
+		opacity: 0.6;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0.6;
+	}
+}

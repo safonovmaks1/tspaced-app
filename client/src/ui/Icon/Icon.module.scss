@@ -1,6 +1,6 @@
 .icon {
 	& svg {
-		transition: all 0.3s;
+		transition: all 0.3s ease-in-out;
 
 		&.darken {
 			fill: var(--title-color);
@@ -12,14 +12,6 @@
 
 		&.white {
 			fill: #fff;
-		}
-
-		&.del {
-			fill: var(--title-color);
-
-			&:hover {
-				fill: red;
-			}
 		}
 
 		&:disabled {

@@ -52,8 +52,8 @@ export const AboutSection = () => {
 
 					<Link to="/contact" className={s.aboutLink}>
 						Связаться со мной
-						<Icon size="28" color="white">
-							<RiArrowRightDownLine />
+						<Icon color="white">
+							<RiArrowRightDownLine size="28" />
 						</Icon>
 					</Link>
 				</div>

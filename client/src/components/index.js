@@ -3,5 +3,7 @@ export * from './Footer/Footer';
 export * from './Header/Header';
 export * from './LoaderText/LoaderText';
 export * from './Main/Main';
+export * from './Navigation/Navigation';
 export * from './ScrollLink/ScrollLink';
+export * from './ScrollUp/ScrollUp';
 export * from './SlicedText/SlicedText';

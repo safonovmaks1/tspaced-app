@@ -1,0 +1,119 @@
+.navigation {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: var(--header-height);
+
+	&Logo {
+		color: var(--title-color);
+	}
+
+	&Menu {
+		@media screen and (width <= 992px) {
+			position: fixed;
+			top: 0;
+			right: -100%;
+			z-index: var(--z-fixed);
+
+			width: 70%;
+			height: 100%;
+			padding: 4rem 0 3rem 3rem;
+			overflow: auto;
+
+			background-color: var(--container-color);
+			border-radius: 1rem 0 0 1rem;
+			box-shadow: -2px 0 4px hsl(var(--hue) 24% 15% / 15%);
+
+			transition: all var(--transition-time) ease-in-out;
+		}
+	}
+
+	&List {
+		display: flex;
+		flex-direction: column;
+		row-gap: 1.5rem;
+	}
+
+	&Link {
+		color: var(--title-color);
+		font-weight: var(--font-medium);
+
+		&:hover {
+			color: var(--first-color);
+		}
+
+		&Active {
+			position: relative;
+
+			color: var(--first-color);
+
+			&::after {
+				position: absolute;
+				bottom: -0.1rem;
+				left: 0;
+
+				width: 50%;
+				height: 2px;
+
+				background-color: var(--first-color);
+
+				content: '';
+			}
+		}
+	}
+
+	&Toggle,
+	&Icon {
+		display: inline-flex;
+
+		cursor: pointer;
+	}
+
+	&Close {
+		position: absolute;
+		top: 1rem;
+		right: 1.25rem;
+
+		cursor: pointer;
+	}
+
+	&Btns {
+		display: flex;
+		align-items: center;
+
+		column-gap: 0.75rem;
+	}
+}
+
+.menuOpen {
+	right: 0;
+
+	transition: right var(--transition-time) ease-in-out;
+}
+
+.menuClose {
+	right: -100;
+}
+
+@media screen and (width >= 992px) {
+	.navigation {
+		height: calc(var(--header-height) + 0.5rem);
+
+		column-gap: 3rem;
+
+		&Toggle,
+		&Close {
+			display: none;
+		}
+
+		&Menu {
+			margin-left: auto;
+		}
+
+		&List {
+			flex-direction: row;
+
+			column-gap: 1.1rem;
+		}
+	}
+}

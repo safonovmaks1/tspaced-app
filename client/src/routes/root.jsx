@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import { Footer, Header, Main } from '../components';
+import { Footer, Header, Main, ScrollUp } from '../components';
 
 export const Root = () => {
 	// const [isLoading, setIsLoading] = useState(false);
@@ -36,8 +36,8 @@ export const Root = () => {
 				<Outlet />
 			</Main>
 			<Footer />
+			<ScrollUp />
 			{/* Uncomment the following lines if you have these components */}
-			{/* <ScrollUp /> */}
 			{/* <CookieConsent /> */}
 			{/* <Modal /> */}
 		</div>
