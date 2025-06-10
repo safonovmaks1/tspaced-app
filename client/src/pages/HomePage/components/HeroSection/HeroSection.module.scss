@@ -10,7 +10,7 @@
 
 	&Image {
 		order: 0;
-		width: 200px;
+		width: 230px;
 		margin: 0 auto;
 	}
 
@@ -43,7 +43,7 @@
 @media screen and (width <= 320px) {
 	.hero {
 		&Image {
-			width: 180px;
+			width: 190px;
 		}
 
 		&Title {
@@ -75,7 +75,7 @@
 @media screen and (width >= 992px) {
 	.hero {
 		&Image {
-			width: 390px;
+			width: 400px;
 		}
 
 		&Data {

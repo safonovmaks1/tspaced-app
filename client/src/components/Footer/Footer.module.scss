@@ -1,0 +1,97 @@
+.footer {
+	&Container {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: var(--mb-1-5);
+
+		@media screen and (width >= 767px) {
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+
+	&Logo {
+		color: var(--title-color);
+	}
+
+	&Nav {
+		&List {
+			display: flex;
+			gap: 1.5rem;
+			align-items: center;
+		}
+
+		&Link {
+			color: var(--title-color);
+			font-weight: var(--font-bold);
+
+			&Active {
+				color: var(--first-color);
+			}
+		}
+	}
+
+	&Socials {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+
+		&Link {
+			span {
+				transition: all 0.3s ease-in-out;
+
+				&:hover {
+					transform: translateY(-0.25rem);
+				}
+			}
+		}
+	}
+
+	&Copy {
+		order: 3;
+
+		@media screen and (width >= 767px) {
+			order: 1;
+		}
+	}
+
+	&Dev {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		justify-content: center;
+		order: 1;
+
+		@media screen and (width >= 767px) {
+			order: 2;
+		}
+
+		&Link {
+			display: flex;
+			gap: 0.4rem;
+
+			color: var(--title-color);
+			font-weight: var(--font-bold);
+
+			&:hover {
+				color: var(--first-color);
+			}
+		}
+
+		&Icon {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&Policy {
+		order: 2;
+
+		@media screen and (width >= 767px) {
+			order: 3;
+		}
+	}
+}
