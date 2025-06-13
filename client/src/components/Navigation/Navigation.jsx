@@ -1,7 +1,19 @@
-import { RiCloseLine, RiMenu4Line, RiMoonLine, RiSunLine } from '@remixicon/react';
+import {
+	RiArrowGoBackLine,
+	RiCloseLine,
+	RiLoginBoxLine,
+	RiLogoutBoxLine,
+	RiMenu4Line,
+	RiMoonLine,
+	RiSunLine,
+} from '@remixicon/react';
 import cn from 'classnames';
-import { NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { ROLE } from '../../constants';
 import { useNavigationMenu, useTheme } from '../../hooks';
+import { logout } from '../../store/actions';
+import { selectUserRole, selectUserSession } from '../../store/selectors';
 import { Container, Icon, Logo } from '../../ui';
 import { navLinks } from '../../utils';
 import s from './Navigation.module.scss';
@@ -10,6 +22,16 @@ export const Navigation = () => {
 	const { theme, toggleTheme } = useTheme();
 	const { isMenuOpen, handleMenuClose, handleMenuOpen, handleMenuLinkClick } =
 		useNavigationMenu();
+
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const roleId = useSelector(selectUserRole);
+	const session = useSelector(selectUserSession);
+
+	const onLogout = () => {
+		dispatch(logout(session));
+		sessionStorage.removeItem('userData');
+	};
 	return (
 		<Container className={s.navigation}>
 			<NavLink to="/" className={s.navigationLogo}>
@@ -37,12 +59,32 @@ export const Navigation = () => {
 
 				<div className={s.navigationClose} onClick={handleMenuClose}>
 					<Icon color="darken">
-						<RiCloseLine size="30" />
+						<RiCloseLine size="27" />
 					</Icon>
 				</div>
 			</div>
 
 			<div className={s.navigationBtns}>
+				<div className={s.navigationIcon} onClick={() => navigate(-1)}>
+					<Icon color="darken">
+						<RiArrowGoBackLine size="27" />
+					</Icon>
+				</div>
+
+				{roleId === ROLE.GUEST ? (
+					<Link to="/login" className={s.navigationIcon}>
+						<Icon color="darken">
+							<RiLoginBoxLine size="27" />
+						</Icon>
+					</Link>
+				) : (
+					<Link className={s.navigationLogin} onClick={onLogout}>
+						<Icon color="darken">
+							<RiLogoutBoxLine size="27" />
+						</Icon>
+					</Link>
+				)}
+
 				<div
 					className={s.navigationIcon}
 					onClick={toggleTheme}
@@ -52,17 +94,17 @@ export const Navigation = () => {
 					}>
 					{theme === 'light' ? (
 						<Icon color="darken">
-							<RiSunLine size="30" />
+							<RiSunLine size="27" />
 						</Icon>
 					) : (
 						<Icon color="darken">
-							<RiMoonLine size="30" />
+							<RiMoonLine size="27" />
 						</Icon>
 					)}
 				</div>
 				<div className={s.navigationToggle} onClick={handleMenuOpen}>
 					<Icon color="darken">
-						<RiMenu4Line size="30" />
+						<RiMenu4Line size="27" />
 					</Icon>
 				</div>
 			</div>

@@ -1,12 +1,10 @@
-import { Container, Section } from '../../ui';
+import { Container, Section, Title } from '../../ui';
 
 export const PortfolioPage = () => {
 	return (
 		<Section>
 			<Container>
-				<div>
-					<h1>PortfolioPage</h1>
-				</div>
+				<Title>Портфолио</Title>
 			</Container>
 		</Section>
 	);

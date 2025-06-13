@@ -1,0 +1,35 @@
+.adminPanel {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&Login {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+		margin-left: 1rem;
+
+		font-weight: var(--font-bold);
+		font-size: var(--h3-font-size);
+	}
+
+	&Icon {
+		display: inline-flex;
+		gap: 0.5rem;
+
+		cursor: pointer;
+
+		&Text {
+			@media screen and (width <= 768px) {
+				display: none;
+			}
+		}
+	}
+
+	&Buttons {
+		display: inline-flex;
+		align-items: center;
+
+		column-gap: 1rem;
+	}
+}

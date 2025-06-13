@@ -1,0 +1,41 @@
+.form {
+	display: grid;
+	gap: 1rem;
+
+	padding: 2rem 1rem;
+	margin-inline: auto;
+
+	text-align: center;
+
+	@media screen and (width >= 767px) {
+		width: 55%;
+	}
+
+	&Error {
+		padding: 0.5rem 1rem;
+
+		color: #38423e;
+		font-weight: var(--font-semi-bold);
+
+		background-color: rgb(250 187 187);
+		border-radius: var(--border-radius);
+	}
+
+	&Text {
+		font-size: var(--normal-font-size);
+
+		@media (width <= 768px) {
+			font-size: var(--small-font-size);
+		}
+	}
+
+	&Link {
+		padding-inline: 0.5rem;
+
+		color: #1a73e8;
+
+		&:hover {
+			color: var(--first-color);
+		}
+	}
+}

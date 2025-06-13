@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { AdminPanel } from '../AdminPanel/AdminPanel';
 import { Navigation } from '../Navigation/Navigation';
 import s from './Header.module.scss';
 
@@ -19,6 +20,7 @@ export const Header = () => {
 	return (
 		<header className={headerFixed ? `${s.header} ${s.scrollHeader}` : s.header}>
 			<Navigation />
+			<AdminPanel />
 		</header>
 	);
 };

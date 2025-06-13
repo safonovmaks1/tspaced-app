@@ -11,10 +11,12 @@
 	},
 	"dependencies": {
 		"@a1rth/css-normalize": "^1.1.9",
+		"@hookform/resolvers": "^5.1.1",
 		"@remixicon/react": "^4.6.0",
 		"classnames": "^2.5.1",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
+		"react-hook-form": "^7.57.0",
 		"react-redux": "^9.2.0",
 		"react-router-dom": "^7.6.2",
 		"redux": "^5.0.1",
@@ -23,7 +25,8 @@
 		"stylelint-config-rational-order": "^0.1.2",
 		"stylelint-config-standard-scss": "^15.0.1",
 		"stylelint-scss": "^6.12.0",
-		"swiper": "^11.2.8"
+		"swiper": "^11.2.8",
+		"yup": "^1.6.1"
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.25.0",

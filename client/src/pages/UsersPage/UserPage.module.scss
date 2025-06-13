@@ -1,0 +1,141 @@
+.userContainer {
+	padding: 1rem 0;
+}
+
+.userTableWrapper {
+	overflow-x: auto;
+
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+}
+
+.userTable {
+	width: 100%;
+	min-width: 600px;
+
+	color: var(--text-color);
+	font-size: 0.9rem;
+
+	background-color: var(--container-color);
+	border-collapse: collapse;
+
+	thead {
+		color: white;
+
+		background-color: var(--first-color);
+
+		tr {
+			th {
+				padding: 1rem 1.2rem;
+
+				font-weight: 600;
+				text-align: left;
+
+				&:last-child,
+				&:nth-last-child(2) {
+					width: 80px;
+
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			border-bottom: 1px solid var(--first-color-lighten);
+
+			transition: background-color 0.2s;
+
+			&:nth-child(even) {
+				color: var(--title-color);
+
+				background-color: var(--first-color-light);
+			}
+
+			&:hover {
+				background-color: rgb(var(--first-color-light), 0.15);
+			}
+
+			td {
+				padding: 0.8rem 1.2rem;
+
+				&:last-child,
+				&:nth-last-child(2) {
+					padding: 0.5rem;
+
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+.selectRole {
+	width: 100%;
+	max-width: 200px;
+	padding: 0.5rem 0.75rem;
+
+	color: var(--text-color);
+	font-size: 0.85rem;
+
+	background-color: var(--container-color);
+	border: 1px solid var(--first-color-light);
+	border-radius: 0.25rem;
+	cursor: pointer;
+
+	transition: border-color 0.3s;
+
+	&:focus {
+		border-color: var(--first-color);
+		outline: none;
+		box-shadow: 0 0 0 3px rgb(var(--first-color), 0.2);
+	}
+}
+
+.iconAction {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.4rem;
+
+	color: var(--text-color-light);
+
+	border-radius: 50%;
+	cursor: pointer;
+
+	transition: all 0.3s;
+
+	&:hover {
+		color: var(--first-color);
+
+		background-color: rgb(var(--first-color), 0.1);
+		transform: translateY(-2px);
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+
+	&[disabled] {
+		transform: none;
+		cursor: not-allowed;
+		opacity: 0.5;
+
+		&:hover {
+			color: var(--text-color-light);
+
+			background-color: transparent;
+		}
+	}
+
+	&Delete {
+		cursor: pointer;
+
+		& svg {
+			&:hover {
+				fill: red;
+			}
+		}
+	}
+}
