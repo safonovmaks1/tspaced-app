@@ -32,6 +32,7 @@
 			margin: 0 auto;
 
 			border-radius: var(--border-radius-lg);
+			box-shadow: 0 4px 8px 4px rgb(0 0 0 / 30%);
 
 			@media screen and (width >= 992px) {
 				width: 400px;

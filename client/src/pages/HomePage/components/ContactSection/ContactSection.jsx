@@ -6,6 +6,7 @@ import {
 } from '@remixicon/react';
 import { Container, Icon, Section, Title } from '../../../../ui';
 import s from './ContactSection.module.scss';
+import { ContactForm } from './components';
 
 export const ContactSection = () => {
 	return (
@@ -71,7 +72,9 @@ export const ContactSection = () => {
 							</a>
 						</div>
 					</div>
-					<div className={s.contactForm}>Form</div>
+					<div className={s.contactForm}>
+						<ContactForm />
+					</div>
 				</div>
 			</Container>
 		</Section>

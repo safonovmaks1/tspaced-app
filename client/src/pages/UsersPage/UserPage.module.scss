@@ -11,7 +11,7 @@
 
 .userTable {
 	width: 100%;
-	min-width: 600px;
+	min-width: 500px;
 
 	color: var(--text-color);
 	font-size: 0.9rem;
@@ -99,12 +99,10 @@
 	justify-content: center;
 	padding: 0.4rem;
 
-	color: var(--text-color-light);
+	color: var(--title-color);
 
 	border-radius: 50%;
 	cursor: pointer;
-
-	transition: all 0.3s;
 
 	&:hover {
 		color: var(--first-color);
@@ -120,7 +118,7 @@
 	&[disabled] {
 		transform: none;
 		cursor: not-allowed;
-		opacity: 0.5;
+		opacity: 0.4;
 
 		&:hover {
 			color: var(--text-color-light);
@@ -130,6 +128,8 @@
 	}
 
 	&Delete {
+		color: var(--title-color);
+
 		cursor: pointer;
 
 		& svg {

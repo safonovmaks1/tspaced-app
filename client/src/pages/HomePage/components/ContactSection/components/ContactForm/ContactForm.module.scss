@@ -1,0 +1,177 @@
+.form {
+	max-width: 640px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+
+	text-align: left;
+
+	background-color: var(--body-color);
+	border-radius: 8px;
+	box-shadow: var(--shadow);
+
+	&Wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		margin-bottom: var(--mb-1-5);
+	}
+
+	&Field {
+		position: relative;
+
+		.formLabel {
+			display: block;
+			margin-bottom: 6px;
+
+			color: var(--text-color);
+			font-weight: 500;
+			font-size: var(--smaller-font-size);
+		}
+
+		& textarea {
+			width: 100%;
+			min-height: 120px;
+			padding: 1rem;
+
+			font-weight: var(--font-medium);
+			font-size: var(--small-font-size);
+
+			border: 2px solid var(--first-color);
+			border-radius: 0.5rem;
+			outline: 0;
+
+			transition: border-color 0.4s, box-shadow 0.4s;
+
+			resize: vertical;
+		}
+	}
+
+	&Check {
+		width: 20px;
+		height: 20px;
+		margin-right: 8px;
+
+		vertical-align: middle;
+		accent-color: var(--first-color);
+
+		&Label {
+			color: #5f6368;
+			font-size: 0.875rem;
+
+			a {
+				color: #1a73e8;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	&Error {
+		display: flex;
+		gap: 4px;
+		align-items: center;
+		margin-top: 8px;
+
+		color: #d93025;
+		font-size: 0.75rem;
+	}
+}
+
+.options {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	margin-top: 8px;
+
+	&Item {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		min-height: 32px;
+	}
+
+	&Label {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		min-height: 24px;
+		padding-left: 36px;
+
+		color: var(--title-color);
+		font-size: 0.875rem;
+
+		cursor: pointer;
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 0;
+
+			width: 20px;
+			height: 20px;
+
+			background: transparent;
+			border: 2px solid #5f6368;
+			border-radius: 50%;
+			transform: translateY(-50%);
+
+			transition: all 0.2s ease;
+
+			content: '';
+		}
+
+		&::after {
+			position: absolute;
+			top: 29%;
+			left: 5px;
+
+			width: 10px;
+			height: 10px;
+
+			background: white;
+			border-radius: 50%;
+			transform: scale(0);
+
+			transition: transform 0.2s ease;
+
+			content: '';
+		}
+
+		&:hover::before {
+			border-color: var(--first-color);
+		}
+	}
+
+	&Input {
+		position: absolute;
+
+		width: 0;
+		height: 0;
+
+		opacity: 0;
+
+		&:checked + .optionsLabel::before {
+			background-color: var(--first-color);
+			border-color: var(--first-color);
+		}
+
+		&:checked + .optionsLabel::after {
+			transform: scale(1);
+		}
+
+		&:focus + .optionsLabel::before {
+			box-shadow: 0 0 0 2px rgb(26 115 232 / 20%);
+		}
+
+		&:disabled + .optionsLabel {
+			cursor: not-allowed;
+			opacity: 0.6;
+		}
+	}
+}
