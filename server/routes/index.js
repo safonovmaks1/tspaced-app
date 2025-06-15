@@ -10,5 +10,6 @@ router.use('/services', require('./service'));
 router.use('/prices', require('./price'));
 router.use('/faqs', require('./faq'));
 router.use('/works', require('./work'));
+router.use('/', require('./telegram'));
 
 module.exports = router;
