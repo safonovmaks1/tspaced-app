@@ -6,7 +6,7 @@ button {
 .button {
 	display: inline-flex;
 	align-items: center;
-	padding: 0.75rem 1.5rem;
+	padding: 0.75em 1.25em;
 
 	color: #fff;
 	font-weight: var(--font-bold);
@@ -41,7 +41,7 @@ button {
 		width: 100%;
 
 		@media screen and (width >= 767px) {
-			width: initial;
+			width: fit-content;
 		}
 	}
 

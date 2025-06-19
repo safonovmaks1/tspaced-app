@@ -1,0 +1,47 @@
+.comment {
+	padding: 1rem;
+
+	border: 2px solid var(--first-color);
+	border-radius: var(--input-radius);
+
+	&Info {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1rem 0;
+
+		border-bottom: 1px solid var(--first-color);
+
+		&Container {
+			display: flex;
+			gap: 1rem;
+			align-items: center;
+		}
+	}
+
+	&Author,
+	&Date {
+		display: flex;
+		gap: 0.2rem;
+		align-items: center;
+
+		font-size: var(--small-font-size);
+	}
+
+	&Text {
+		margin-top: 1rem;
+		padding-left: 1rem;
+
+		font-size: var(--h3-font-size);
+	}
+
+	&Icon {
+		cursor: pointer;
+
+		& svg {
+			&:hover {
+				fill: red;
+			}
+		}
+	}
+}

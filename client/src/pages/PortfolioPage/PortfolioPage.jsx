@@ -1,4 +1,4 @@
-import { RiArrowRightLine } from '@remixicon/react';
+import { RiArrowRightLine, RiChat3Line } from '@remixicon/react';
 import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -25,36 +25,39 @@ export const PortfolioPage = () => {
 				<Title>Портфолио</Title>
 
 				{isLoading ? (
-					<LoaderText text="Загрузка данных..." />
+					<LoaderText text='Загрузка данных...' />
 				) : (
 					<div className={s.portfolioList}>
-						{posts.map(({ id, imageUrl, title, content, location, year }) => (
+						{posts.map(({ id, imageUrl, title, content, location, year, comments }) => (
 							<article key={id} className={s.portfolioContent}>
-								<ImageContainer>
-									<img
-										className={s.portfolioImage}
-										src={imageUrl}
-										alt={title}
-									/>
-								</ImageContainer>
+								<Link to={`/post/${id}`}>
+									<ImageContainer>
+										<img className={s.portfolioImage} src={imageUrl} alt={title} />
+									</ImageContainer>
+								</Link>
 								<div className={s.portfolioData}>
 									<h3 className={s.portfolioTitle}>{title}</h3>
+
+									<div className={s.portfolioInfo}>
+										<span className={s.portfolioInfoDate}>
+											{location} / {year}
+										</span>
+										<span className={s.portfolioInfoCommentCount}>
+											<Icon color='darken'>
+												<RiChat3Line size='1rem' />
+											</Icon>
+											{comments.length}
+										</span>
+									</div>
 
 									<SlicedText width={4} className={s.portfolioText}>
 										{content}
 									</SlicedText>
 
-									<div className={s.portfolioInfo}>
-										<span>{location}</span>
-										<span>{year}</span>
-									</div>
-
-									<Link
-										to={`/post/${id}`}
-										className={cn(b.button, s.portfolioButton)}>
+									<Link to={`/post/${id}`} className={cn(b.button, s.portfolioButton)}>
 										Смотреть проект
-										<Icon color="white">
-											<RiArrowRightLine size="1.5rem" />
+										<Icon color='white'>
+											<RiArrowRightLine size='1.5rem' />
 										</Icon>
 									</Link>
 								</div>

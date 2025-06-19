@@ -1,0 +1,17 @@
+.specialPanel {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	justify-content: space-between;
+
+	@media (width <= 768px) {
+		flex-direction: column;
+	}
+
+	&Date,
+	&Buttons {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+	}
+}

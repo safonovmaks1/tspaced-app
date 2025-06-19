@@ -1,0 +1,42 @@
+.comments {
+	--input-radius: 0.75rem;
+	--input-padding: 1rem;
+	--editor-min-height: 150px;
+
+	padding: 2rem 0 1rem;
+
+	&Container {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		padding: 1rem;
+	}
+
+	&Textarea {
+		min-height: var(--editor-min-height);
+		padding: var(--input-padding);
+
+		font-size: 1rem;
+		line-height: 1.6;
+		white-space: pre-line;
+
+		border: 2px solid var(--first-color);
+		border-radius: var(--input-radius);
+		outline: none;
+	}
+
+	&Button {
+		gap: initial;
+
+		@media screen and (width <= 767px) {
+			width: fit-content;
+		}
+	}
+
+	&Item {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		padding: 1rem;
+	}
+}

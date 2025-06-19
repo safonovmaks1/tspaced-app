@@ -30,7 +30,7 @@ export const PortfolioSection = () => {
 				<div className={s.portfolioText}>Фрагменты моих избранных проектов</div>
 
 				{isLoading ? (
-					<LoaderText text="Загрузка данных..." />
+					<LoaderText text='Загрузка данных...' />
 				) : (
 					<div className={s.portfolioSlider} style={{ textAlign: 'center' }}>
 						<Swiper
@@ -41,13 +41,15 @@ export const PortfolioSection = () => {
 							autoplay={{
 								delay: 4000,
 								disableOnInteraction: false,
-							}}>
+							}}
+						>
 							{posts.map(
 								({ id, imageUrl, title, content, location, year }) => (
 									<SwiperSlide>
 										<article
 											key={id}
-											className={s.portfolioSliderContent}>
+											className={s.portfolioSliderContent}
+										>
 											<img
 												className={s.portfolioSliderImages}
 												src={imageUrl}
@@ -61,7 +63,8 @@ export const PortfolioSection = () => {
 
 												<SlicedText
 													width={4}
-													className={s.portfolioSliderText}>
+													className={s.portfolioSliderText}
+												>
 													{content}
 												</SlicedText>
 
@@ -75,10 +78,11 @@ export const PortfolioSection = () => {
 													className={cn(
 														b.button,
 														s.portfolioSliderButton,
-													)}>
+													)}
+												>
 													Смотреть проект
-													<Icon color="white">
-														<RiArrowRightLine size="1.5rem" />
+													<Icon color='white'>
+														<RiArrowRightLine size='1.5rem' />
 													</Icon>
 												</Link>
 											</div>

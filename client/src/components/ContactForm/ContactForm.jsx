@@ -5,8 +5,8 @@ import { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { resetFormState, sendForm } from '../../../../../../store/actions';
-import { Button, Icon, Input } from '../../../../../../ui';
+import { resetFormState, sendForm } from '../../store/actions';
+import { Button, Icon, Input } from '../../ui';
 import s from './ContactForm.module.scss';
 import { schema } from './schema';
 
