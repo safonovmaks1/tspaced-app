@@ -50,7 +50,11 @@ export const PostForm = ({ post: { id, imageUrl, title, content, location, year 
 	return (
 		<Section>
 			<Container>
-				<form className={s.postForm} onSubmit={handleSubmit}>
+				<form
+					className={s.postForm}
+					onSubmit={handleSubmit}
+					enctype='multipart/form-data'
+				>
 					<SpecialPanel
 						className={s.postFormSpecialPanel}
 						id={id}
@@ -71,22 +75,14 @@ export const PostForm = ({ post: { id, imageUrl, title, content, location, year 
 						placeholder='Изображение...'
 						onChange={onImageChange}
 					/>
-					<Input
-						value={titleValue}
-						placeholder='Заголовок...'
-						onChange={onTitleChange}
-					/>
+					<Input value={titleValue} placeholder='Заголовок...' onChange={onTitleChange} />
 
 					<Input
 						value={locationValue}
 						placeholder='Локация...'
 						onChange={onLocationChange}
 					/>
-					<Input
-						value={yearValue}
-						placeholder='Год работы...'
-						onChange={onYearChange}
-					/>
+					<Input value={yearValue} placeholder='Год работы...' onChange={onYearChange} />
 
 					<textarea
 						value={contentValue}

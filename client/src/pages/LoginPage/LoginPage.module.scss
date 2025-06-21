@@ -1,6 +1,7 @@
 .form {
 	display: grid;
 	gap: 1rem;
+	justify-items: center;
 
 	padding: 2rem 1rem;
 	margin-inline: auto;
@@ -8,7 +9,7 @@
 	text-align: center;
 
 	@media screen and (width >= 767px) {
-		width: 55%;
+		width: 50%;
 	}
 
 	&Error {

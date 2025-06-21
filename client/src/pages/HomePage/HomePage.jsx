@@ -1,3 +1,4 @@
+import { useChangeDocumentTitle } from '../../hooks';
 import {
 	AboutSection,
 	ContactSection,
@@ -10,6 +11,8 @@ import {
 } from './components';
 
 export const HomePage = () => {
+	useChangeDocumentTitle('Заказать дизайн-проект!');
+
 	return (
 		<>
 			<HeroSection />
