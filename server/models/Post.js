@@ -9,10 +9,6 @@ const PostSchema = mongoose.Schema({
 	image: {
 		type: String,
 		required: true,
-		validate: {
-			validator: validator.isURL,
-			message: 'Image should be avalid url',
-		},
 	},
 	content: {
 		type: String,

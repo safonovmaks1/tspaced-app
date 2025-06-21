@@ -12,6 +12,7 @@ const hasRole = require('../middlewares/hasRole');
 const mapPost = require('../helpers/mapPost');
 const mapComment = require('../helpers/mapComment');
 const ROLES = require('../constants/roles');
+const upload = require('../middlewares/upload');
 
 const router = express.Router({ mergeParams: true });
 
@@ -51,29 +52,49 @@ router.delete(
 	},
 );
 
-router.post('/', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {
-	const newPost = await addPost({
-		title: req.body.title,
-		content: req.body.content,
-		location: req.body.location,
-		year: req.body.year,
-		image: req.body.imageUrl,
-	});
+router.post(
+	'/',
+	authenticated,
+	hasRole([ROLES.ADMIN]),
+	upload.single('image'),
+	async (req, res) => {
+		if (!req.file) {
+			return res.status(400).json({ error: 'Image is required' });
+		}
 
-	res.send({ data: mapPost(newPost) });
-});
+		const newPost = await addPost({
+			title: req.body.title,
+			content: req.body.content,
+			location: req.body.location,
+			year: req.body.year,
+			image: req.file.filename, // Имя файла
+		});
 
-router.patch('/:id', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {
-	const updatedPost = await editPost(req.params.id, {
-		title: req.body.title,
-		content: req.body.content,
-		location: req.body.location,
-		year: req.body.year,
-		image: req.body.imageUrl,
-	});
+		res.send({ data: mapPost(newPost) });
+	},
+);
 
-	res.send({ data: mapPost(updatedPost) });
-});
+router.patch(
+	'/:id',
+	authenticated,
+	hasRole([ROLES.ADMIN]),
+	upload.single('image'),
+	async (req, res) => {
+		const updateData = {
+			title: req.body.title,
+			content: req.body.content,
+			location: req.body.location,
+			year: req.body.year,
+		};
+
+		if (req.file) {
+			updateData.image = req.file.filename;
+		}
+
+		const updatedPost = await editPost(req.params.id, updateData);
+		res.send({ data: mapPost(updatedPost) });
+	},
+);
 
 router.delete('/:id', authenticated, hasRole([ROLES.ADMIN]), async (req, res) => {
 	await deletePost(req.params.id);

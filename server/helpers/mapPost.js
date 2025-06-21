@@ -5,7 +5,7 @@ module.exports = function (post) {
 	return {
 		id: post.id,
 		title: post.title,
-		imageUrl: post.image,
+		imageUrl: `/uploads/${post.image}`,
 		content: post.content,
 		location: post.location,
 		year: post.year,
