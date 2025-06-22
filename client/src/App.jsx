@@ -23,22 +23,22 @@ import { setUser } from './store/actions';
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
-		<Route path="/" element={<Root />}>
+		<Route path='/' element={<Root />}>
 			<Route index element={<HomePage />} />
-			<Route path="/login" element={<LoginPage />} />
-			<Route path="/register" element={<RegisterPage />} />
+			<Route path='/login' element={<LoginPage />} />
+			<Route path='/register' element={<RegisterPage />} />
 
-			<Route path="/users" element={<UsersPage />} />
-			<Route path="/portfolio" element={<PortfolioPage />} />
+			<Route path='/users' element={<UsersPage />} />
+			<Route path='/portfolio' element={<PortfolioPage />} />
 
-			<Route path="/post" element={<PostPage />} />
-			<Route path="/post/:id" element={<PostPage />} />
-			<Route path="/post/:id/edit" element={<PostPage />} />
+			<Route path='/post' element={<PostPage />} />
+			<Route path='/post/:id' element={<PostPage />} />
+			<Route path='/post/:id/edit' element={<PostPage />} />
 
-			<Route path="/contact" element={<ContactPage />} />
-			<Route path="/privacy" element={<PrivacyPage />} />
+			<Route path='/contact' element={<ContactPage />} />
+			<Route path='/privacy' element={<PrivacyPage />} />
 
-			<Route path="*" element={<ErrorPage error={ERROR.PAGE_NOT_EXIST} />} />
+			<Route path='*' element={<ErrorPage error={ERROR.PAGE_NOT_EXIST} />} />
 		</Route>,
 	),
 );

@@ -1,9 +1,15 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
+import imagemin from 'vite-plugin-imagemin';
 
 // https://vite.dev/config/
 export default defineConfig({
-	plugins: [react()],
+	plugins: [
+		react(),
+		imagemin({
+			jpeg: { quality: 70 },
+		}),
+	],
 	server: {
 		host: true,
 		proxy: {
