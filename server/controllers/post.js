@@ -1,4 +1,6 @@
 const Post = require('../models/Post');
+const path = require('path');
+const fs = require('fs').promises;
 
 // add
 async function addPost(post) {
@@ -8,7 +10,6 @@ async function addPost(post) {
 }
 
 // edit
-
 async function editPost(id, post) {
 	const newPost = await Post.findByIdAndUpdate(id, post, {
 		returnDocument: 'after',
@@ -18,7 +19,24 @@ async function editPost(id, post) {
 }
 
 // delete
-function deletePost(id) {
+async function deletePost(id) {
+	const post = await Post.findById(id);
+
+	if (!post) {
+		throw new Error('Post not found');
+	}
+
+	if (post.image) {
+		const imagePath = path.join(__dirname, '../uploads', post.image);
+
+		try {
+			await fs.unlink(imagePath);
+			console.log(`Image deleted: ${imagePath}`);
+		} catch (err) {
+			console.error(`Error deleting image (${imagePath}):`, err);
+		}
+	}
+
 	return Post.deleteOne({ _id: id });
 }
 

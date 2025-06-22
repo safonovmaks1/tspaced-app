@@ -1,4 +1,6 @@
 const express = require('express');
+const path = require('path');
+const fs = require('fs').promises;
 const {
 	getPosts,
 	getPost,
@@ -67,7 +69,7 @@ router.post(
 			content: req.body.content,
 			location: req.body.location,
 			year: req.body.year,
-			image: req.file.filename, // Имя файла
+			image: req.file.filename,
 		});
 
 		res.send({ data: mapPost(newPost) });
@@ -80,6 +82,9 @@ router.patch(
 	hasRole([ROLES.ADMIN]),
 	upload.single('image'),
 	async (req, res) => {
+		const oldPost = await getPost(req.params.id);
+		let oldImage = null;
+
 		const updateData = {
 			title: req.body.title,
 			content: req.body.content,
@@ -89,9 +94,17 @@ router.patch(
 
 		if (req.file) {
 			updateData.image = req.file.filename;
+
+			if (oldPost.image) oldImage = oldPost.image;
 		}
 
 		const updatedPost = await editPost(req.params.id, updateData);
+
+		if (oldImage) {
+			const oldPath = path.join(__dirname, '../uploads', oldImage);
+			fs.unlink(oldPath).catch(console.error);
+		}
+
 		res.send({ data: mapPost(updatedPost) });
 	},
 );

@@ -19,13 +19,13 @@ export const AboutSection = () => {
 	}, []);
 
 	return (
-		<Section id="about" className={s.about}>
+		<Section id='about' className={s.about}>
 			<Container className={s.aboutContainer}>
 				<ImageContainer className={s.aboutImage}>
 					<img
 						src={aboutImages}
-						alt="Дизайнер интерьера Санкт-Петербург"
-						loading="lazy"
+						alt='Дизайнер интерьера Санкт-Петербург'
+						loading='lazy'
 					/>
 				</ImageContainer>
 
@@ -36,13 +36,13 @@ export const AboutSection = () => {
 					</Title>
 
 					{isLoading ? (
-						<LoaderText text="Загрузка данных..." />
+						<LoaderText text='Загрузка данных...' />
 					) : (
 						<ul className={s.aboutList}>
 							{abouts.map(({ id, text }) => (
 								<li key={id} className={s.aboutListText}>
-									<Icon color="white">
-										<RiCheckboxFill size="18" />
+									<Icon color='white'>
+										<RiCheckboxFill size='18' />
 									</Icon>
 									<span className={s.aboutListDescr}>{text}</span>
 								</li>
@@ -50,10 +50,10 @@ export const AboutSection = () => {
 						</ul>
 					)}
 
-					<Link to="/contact" className={s.aboutLink}>
+					<Link to='/contact' className={s.aboutLink}>
 						Связаться со мной
-						<Icon color="white">
-							<RiArrowRightDownLine size="28" />
+						<Icon color='white'>
+							<RiArrowRightDownLine size='28' />
 						</Icon>
 					</Link>
 				</div>

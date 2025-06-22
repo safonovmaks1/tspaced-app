@@ -1,22 +1,23 @@
-@import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
+// @import 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap';
 
 :root {
 	--header-height: 3.5rem;
 	--container-width: 1170px;
 	--container-padding-x: 1rem;
 
-	/*  Colors  */
-	--hue: 150;
+	/* Improved Colors */
+	--hue: 145;
 
 	/* Light Theme */
-	--first-color: hsl(var(--hue) 24% 32%);
-	--first-color-alt: hsl(var(--hue) 24% 28%);
-	--first-color-light: hsl(var(--hue) 24% 66%);
-	--first-color-lighten: hsl(var(--hue) 24% 92%);
-	--title-color: hsl(var(--hue) 4% 15%);
-	--text-color: hsl(var(--hue) 4% 35%);
-	--text-color-light: hsl(var(--hue) 4% 55%);
-	--body-color: hsl(var(--hue) 0% 100%);
+	--first-color: hsl(var(--hue) 32% 40%); /* насыщенный основной */
+	--first-color-alt: hsl(var(--hue) 32% 32%); /* для hover/active */
+	--first-color-light: hsl(var(--hue) 60% 70%); /* светлый акцент */
+	--first-color-lighten: hsl(var(--hue) 80% 94%); /* фоновые блоки/ховер */
+	--title-color: hsl(210deg 15% 15%); /* тёмный заголовок, нейтральный */
+	--text-color: hsl(210deg 10% 30%); /* основной текст */
+	--text-color-light: hsl(210deg 10% 50%); /* вторичный текст */
+	--body-color: hsl(0deg 0% 98%); /* фон сайта — чуть серее белого */
 	--container-color: #fff;
 
 	/* Эффекты */
@@ -24,7 +25,7 @@
 	--transition-time: 0.3s;
 
 	/*  Font and typography  */
-	--body-font: 'Roboto', sans-serif;
+	--body-font: 'Space Grotesk', sans-serif;
 	--big-font-size: 2rem;
 	--h1-font-size: 1.5rem;
 	--h2-font-size: 1.25rem;
@@ -70,13 +71,15 @@
 }
 
 [data-theme='dark'] {
-	--first-color-dark: hsl(var(--hue) 8% 20%);
-	--first-color-second: hsl(var(--hue) 8% 20%);
-	--title-color: hsl(var(--hue) 4% 95%);
-	--text-color: hsl(var(--hue) 4% 75%);
-	--body-color: hsl(var(--hue) 10% 12%);
-	--container-color: hsl(var(--hue) 8% 16%);
-	--input-color: hsl(var(--hue) 29% 16%);
+	--first-color-dark: hsl(var(--hue) 45% 32%); /* основной акцент (зелёный) */
+	--first-color-second: hsl(var(--hue) 40% 25%); /* вариант для фонов и кнопок */
+	--first-color-light: hsl(var(--hue) 60% 60%); /* для подсветки/эффектов */
+	--first-color-lighten: hsl(var(--hue) 70% 85%);
+	--title-color: hsl(var(--hue) 20% 90%); /* заголовки — почти белый с оттенком */
+	--text-color: hsl(var(--hue) 10% 70%); /* текст — мягкий светло-серый */
+	--body-color: hsl(var(--hue) 10% 8%); /* фон — почти чёрный с зелёным подтоном */
+	--container-color: hsl(var(--hue) 10% 12%); /* контейнеры — чуть светлее */
+	--input-color: hsl(var(--hue) 12% 18%); /* поля ввода — средний серо-зелёный */
 }
 
 /* stylelint-disable-next-line selector-class-pattern */
