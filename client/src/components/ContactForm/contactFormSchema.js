@@ -2,7 +2,7 @@ import * as yup from 'yup';
 
 const regExpPhone = new RegExp(/^\+?[1-9][0-9]{7,14}$/);
 
-export const schema = yup.object().shape({
+export const contactFormSchema = yup.object().shape({
 	name: yup
 		.string()
 		.trim()

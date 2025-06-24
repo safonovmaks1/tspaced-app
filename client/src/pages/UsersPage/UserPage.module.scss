@@ -29,6 +29,7 @@
 				padding: 1rem 1.2rem;
 
 				font-weight: 600;
+				white-space: nowrap;
 				text-align: left;
 
 				&:last-child,
@@ -72,8 +73,6 @@
 }
 
 .selectRole {
-	width: 100%;
-	max-width: 200px;
 	padding: 0.5rem 0.75rem;
 
 	color: var(--text-color);

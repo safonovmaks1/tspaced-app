@@ -1,0 +1,25 @@
+.form {
+	max-width: 640px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+
+	text-align: left;
+
+	background-color: var(--body-color);
+	border-radius: 8px;
+	box-shadow: var(--shadow);
+
+	animation: slide-in 0.5s ease-out;
+}
+
+@keyframes slide-in {
+	from {
+		transform: translateY(-30px);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { SpecialPanel } from '../SpecialPanel/SpecialPanel';
 
 import { RiSaveLine } from '@remixicon/react';
+import { Form } from '../../../../components';
 import { savePostAsync } from '../../../../store/actions';
 import { Button, Container, Icon, Input, Section } from '../../../../ui';
 import s from './PostForm.module.scss';
@@ -62,10 +63,10 @@ export const PostForm = ({ post: { id, imageUrl, title, content, location, year 
 	return (
 		<Section>
 			<Container>
-				<form
+				<Form
 					className={s.postForm}
 					onSubmit={handleSubmit}
-					enctype='multipart/form-data'
+					encType='multipart/form-data'
 				>
 					<div className={s.imageUploadContainer}>
 						{previewUrl && (
@@ -80,6 +81,7 @@ export const PostForm = ({ post: { id, imageUrl, title, content, location, year 
 						/>
 						<Button
 							type='button'
+							width='w100'
 							onClick={() => fileInputRef.current.click()}
 							className={s.uploadButton}
 						>
@@ -99,7 +101,6 @@ export const PostForm = ({ post: { id, imageUrl, title, content, location, year 
 					<textarea
 						value={contentValue}
 						onChange={onContentChange}
-						className={s.postFormTextContent}
 						placeholder='Содержание...'
 					/>
 
@@ -109,7 +110,7 @@ export const PostForm = ({ post: { id, imageUrl, title, content, location, year 
 						location={location}
 						year={year}
 						editButton={
-							<Button type='submit' className={s.postFormEditButton}>
+							<Button type='submit' width='w100'>
 								Сохранить
 								<Icon color='white'>
 									<RiSaveLine size='1.2rem' />
@@ -117,7 +118,7 @@ export const PostForm = ({ post: { id, imageUrl, title, content, location, year 
 							</Button>
 						}
 					/>
-				</form>
+				</Form>
 			</Container>
 		</Section>
 	);

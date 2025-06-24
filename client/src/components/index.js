@@ -5,6 +5,7 @@ export * from './ContactForm/ContactForm';
 export * from './CookieConsent/CookieConsent';
 export * from './Error/Error';
 export * from './Footer/Footer';
+export * from './Form/Form';
 export * from './Header/Header';
 export * from './LoaderText/LoaderText';
 export * from './Main/Main';

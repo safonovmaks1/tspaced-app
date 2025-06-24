@@ -7,8 +7,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { resetFormState, sendForm } from '../../store/actions';
 import { Button, Icon, Input } from '../../ui';
+import { Form } from '../Form/Form';
 import s from './ContactForm.module.scss';
-import { schema } from './schema';
+import { contactFormSchema } from './contactFormSchema';
 
 export const ContactForm = () => {
 	const [countdown, setCountdown] = useState(5);
@@ -18,7 +19,7 @@ export const ContactForm = () => {
 		reset: resetForm,
 		formState: { errors, isValid },
 	} = useForm({
-		resolver: yupResolver(schema),
+		resolver: yupResolver(contactFormSchema),
 		mode: 'onChange',
 		defaultValues: {
 			name: '',
@@ -86,22 +87,16 @@ export const ContactForm = () => {
 			{success ? (
 				<div className={s.successContainer}>
 					<h3 className={s.successTitle}>Заявка отправлена!</h3>
-					<p className={s.successMessage}>
-						Мы свяжемся с вами в ближайшее время
-					</p>
+					<p className={s.successMessage}>Мы свяжемся с вами в ближайшее время</p>
 					<p className={s.successCountdown}>
 						Форма автоматически сбросится через: {countdown} сек.
 					</p>
-					<Button
-						className={s.successButton}
-						type='button'
-						onClick={handleReset}
-					>
+					<Button className={s.successButton} type='button' onClick={handleReset}>
 						Отправить новую заявку
 					</Button>
 				</div>
 			) : (
-				<form className={s.form} onSubmit={handleSubmit(submitForm)}>
+				<Form className={s.form} onSubmit={handleSubmit(submitForm)}>
 					<div className={s.formWrapper}>
 						<div className={s.formField}>
 							<label className={s.formLabel} htmlFor='name'>
@@ -190,11 +185,7 @@ export const ContactForm = () => {
 							<label htmlFor='formAgreement' className={s.formCheckLabel}>
 								<span>
 									Я даю свое согласие на
-									<Link to='/privacy'>
-										{' '}
-										обработку персональных данных
-									</Link>
-									*
+									<Link to='/privacy'> обработку персональных данных</Link>*
 								</span>
 							</label>
 						</div>
@@ -210,10 +201,8 @@ export const ContactForm = () => {
 					</div>
 
 					{error && <div className={s.formError}>{error}</div>}
-					{!error && errorMessage && (
-						<div className={s.formError}>{errorMessage}</div>
-					)}
-				</form>
+					{!error && errorMessage && <div className={s.formError}>{errorMessage}</div>}
+				</Form>
 			)}
 		</>
 	);

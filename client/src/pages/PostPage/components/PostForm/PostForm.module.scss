@@ -1,87 +1,34 @@
 .postForm {
-	--max-width: 800px;
-	--input-radius: 0.75rem;
-	--input-padding: 1rem;
-	--transition-duration: 0.2s;
-	--focus-shadow: 0 0 0 3px rgb(66 153 225 / 20%);
-	--editor-min-height: 300px;
-
 	display: flex;
 	flex-direction: column;
-	gap: 1.5rem;
-	width: 90%;
-	max-width: var(--max-width);
-	margin: 2rem auto;
-	padding: 1.5rem;
+	gap: 1rem;
 
-	background: var(--form-bg, #fff);
-	border-radius: 1rem;
-	box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
-
-	animation: formEntrance 0.3s ease-out;
-
-	@media (width <= 768px) {
-		width: 100%;
-		padding: 1rem;
-	}
+	margin-bottom: var(--mb-1-5);
 
 	&SpecialPanel {
 		margin-bottom: 1rem;
 	}
 
-	&EditButton {
-		@media (width <= 480px) {
-			&Text {
-				display: none;
-			}
-		}
-	}
+	& textarea {
+		width: 100%;
+		min-height: 200px;
+		padding: 1rem;
 
-	&TextContent {
-		min-height: var(--editor-min-height);
-		padding: var(--input-padding);
-
-		font-size: 1rem;
-		line-height: 1.6;
-		white-space: pre-line;
+		font-weight: var(--font-medium);
+		font-size: var(--small-font-size);
 
 		border: 2px solid var(--first-color);
-		border-radius: var(--input-radius);
-		outline: none;
+		border-radius: 0.5rem;
+		outline: 0;
 
-		transition: all var(--transition-duration) ease;
+		transition: border-color 0.4s, box-shadow 0.4s;
 
-		&:focus {
-			border-color: var(--accent-color);
-			box-shadow: var(--focus-shadow);
-		}
-
-		&[placeholder]:empty::before {
-			color: var(--text-muted);
-
-			opacity: 0.7;
-
-			content: attr(placeholder);
-		}
-	}
-}
-
-// Анимация появления формы
-/* stylelint-disable-next-line keyframes-name-pattern */
-@keyframes formEntrance {
-	from {
-		transform: translateY(40px);
-		opacity: 0;
-	}
-
-	to {
-		transform: translateY(0);
-		opacity: 1;
+		resize: vertical;
 	}
 }
 
 .imageUploadContainer {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .imagePreview {
@@ -89,6 +36,7 @@
 	max-width: 100%;
 	max-height: 300px;
 	margin-bottom: 10px;
+	margin-inline: auto;
 
 	border-radius: 4px;
 }
