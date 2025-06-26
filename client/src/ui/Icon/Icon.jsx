@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import s from './icon.module.scss';
+import s from './Icon.module.scss';
 
 export const Icon = ({ className, children, color = '', ...props }) => {
 	return (
