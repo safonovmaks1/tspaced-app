@@ -1,13 +1,9 @@
+import { ROLE } from '@/constants';
+import { CLOSE_MODAL, openModal, removeCommentAsync } from '@/store/actions';
+import { selectUserRole } from '@/store/selectors';
+import { Icon } from '@/ui';
 import { RiCalendar2Line, RiDeleteBin3Line, RiUser3Line } from '@remixicon/react';
 import { useDispatch, useSelector } from 'react-redux';
-import { ROLE } from '../../../../../../constants';
-import {
-	CLOSE_MODAL,
-	openModal,
-	removeCommentAsync,
-} from '../../../../../../store/actions';
-import { selectUserRole } from '../../../../../../store/selectors';
-import { Icon } from '../../../../../../ui';
 import s from './Comment.module.scss';
 
 export const Comment = ({ postId, id, author, publishedAt, content }) => {

@@ -1,8 +1,8 @@
+import { selectUserLogin } from '@/store/selectors';
+import { Container, Icon } from '@/ui';
 import { RiFileEditLine, RiUser2Line } from '@remixicon/react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { selectUserLogin } from '../../store/selectors';
-import { Container, Icon } from '../../ui';
 import s from './AdminPanel.module.scss';
 
 export const AdminPanel = () => {

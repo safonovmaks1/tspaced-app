@@ -1,10 +1,10 @@
+import { PrivateContent } from '@/components';
+import { ROLE } from '@/constants';
+import { selectUserRole } from '@/store/selectors';
+import { Container, Section, Title } from '@/ui';
+import { checkAccess, request } from '@/utils';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { PrivateContent } from '../../components';
-import { ROLE } from '../../constants';
-import { selectUserRole } from '../../store/selectors';
-import { Container, Section, Title } from '../../ui';
-import { checkAccess, request } from '../../utils';
 import s from './UserPage.module.scss';
 import { UsersTableRow } from './UsersTableRow/UsersTableRow';
 
@@ -73,9 +73,7 @@ export const UsersPage = () => {
 											login={login}
 											registeredAt={registeredAt}
 											roleId={roleId}
-											roles={roles.filter(
-												({ id: roleId }) => roleId !== ROLE.GUEST,
-											)}
+											roles={roles.filter(({ id: roleId }) => roleId !== ROLE.GUEST)}
 											onUserRemove={() => onUserRemove(id)}
 										/>
 									))}

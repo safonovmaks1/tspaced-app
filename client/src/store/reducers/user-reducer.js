@@ -1,4 +1,4 @@
-import { ROLE } from '../../constants';
+import { ROLE } from '@/constants';
 import { ACTION_TYPE } from '../actions';
 
 const initialUserState = {

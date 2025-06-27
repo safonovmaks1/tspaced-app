@@ -1,15 +1,15 @@
+import { Form } from '@/components';
+import { ROLE } from '@/constants';
+import { useResetForm } from '@/hooks';
+import { setUser } from '@/store/actions';
+import { selectUserRole } from '@/store/selectors';
+import { Button, Container, Input, Section, Title } from '@/ui';
+import { request } from '@/utils';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Navigate } from 'react-router-dom';
-import { Form } from '../../components';
-import { ROLE } from '../../constants';
-import { useResetForm } from '../../hooks';
-import { setUser } from '../../store/actions';
-import { selectUserRole } from '../../store/selectors';
-import { Button, Container, Input, Section, Title } from '../../ui';
-import { request } from '../../utils';
 import { authFormSchema } from './authFormSchema';
 import s from './LoginPage.module.scss';
 

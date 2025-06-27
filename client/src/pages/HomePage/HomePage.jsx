@@ -1,4 +1,4 @@
-import { useChangeDocumentTitle } from '../../hooks';
+import { useChangeDocumentTitle } from '@/hooks';
 import {
 	AboutSection,
 	ContactSection,

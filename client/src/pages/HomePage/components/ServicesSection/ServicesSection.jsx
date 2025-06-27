@@ -1,8 +1,8 @@
+import { LoaderText } from '@/components';
+import { Container, Icon, Section, Title } from '@/ui';
+import { request } from '@/utils';
 import { RiFileEditLine } from '@remixicon/react';
 import { useEffect, useState } from 'react';
-import { LoaderText } from '../../../../components';
-import { Container, Icon, Section, Title } from '../../../../ui';
-import { request } from '../../../../utils';
 import s from './ServiceSection.module.scss';
 import { IconDraft } from './components/IconDraft/IconDraft';
 import { IconPlan } from './components/IconPlan/IconPlan';
@@ -26,7 +26,7 @@ export const ServicesSection = () => {
 
 				<div className={s.servicesContainer}>
 					<div className={s.servicesContent}>
-						<IconDraft size="120px" className={s.servicesContentImages} />
+						<IconDraft size='120px' className={s.servicesContentImages} />
 
 						<h3 className={s.servicesContentTitle}>
 							ПЛАНИРОВОЧНОЕ РЕШЕНИЕ <br />
@@ -34,18 +34,16 @@ export const ServicesSection = () => {
 						</h3>
 
 						{isLoading ? (
-							<LoaderText text="Загрузка данных..." />
+							<LoaderText text='Загрузка данных...' />
 						) : (
 							<ul className={s.servicesContentList}>
 								{services
 									.map(({ id, text }) => (
 										<li key={id}>
-											<Icon size="16" color="white">
+											<Icon size='16' color='white'>
 												<RiFileEditLine />
 											</Icon>
-											<span className={s.servicesContentListDescr}>
-												{text}
-											</span>
+											<span className={s.servicesContentListDescr}>{text}</span>
 										</li>
 									))
 									.slice(0, 5)}
@@ -54,25 +52,23 @@ export const ServicesSection = () => {
 					</div>
 
 					<div className={s.servicesContent}>
-						<IconPlan size="120px" className={s.servicesContentImages} />
+						<IconPlan size='120px' className={s.servicesContentImages} />
 						<h3 className={s.servicesContentTitle}>
 							ЭСКИЗНЫЙ ПРОЕКТ <br />
 							(чертежи)
 						</h3>
 
 						{isLoading ? (
-							<LoaderText text="Загрузка данных..." />
+							<LoaderText text='Загрузка данных...' />
 						) : (
 							<ul className={s.servicesContentList}>
 								{services
 									.map(({ id, text }) => (
 										<li key={id}>
-											<Icon size="16" color="white">
+											<Icon size='16' color='white'>
 												<RiFileEditLine />
 											</Icon>
-											<span className={s.servicesContentListDescr}>
-												{text}
-											</span>
+											<span className={s.servicesContentListDescr}>{text}</span>
 										</li>
 									))
 									.slice(0, 14)}
@@ -81,24 +77,22 @@ export const ServicesSection = () => {
 					</div>
 
 					<div className={s.servicesContent}>
-						<IconProject size="120px" className={s.servicesContentImages} />
+						<IconProject size='120px' className={s.servicesContentImages} />
 						<h3 className={s.servicesContentTitle}>
 							ПОЛНЫЙ ПРОЕКТ <br />
 							(чертежи + визуализация + авторский надзор)
 						</h3>
 
 						{isLoading ? (
-							<LoaderText text="Загрузка данных..." />
+							<LoaderText text='Загрузка данных...' />
 						) : (
 							<ul className={s.servicesContentList}>
 								{services.map(({ id, text }) => (
 									<li key={id}>
-										<Icon size="16" color="white">
+										<Icon size='16' color='white'>
 											<RiFileEditLine />
 										</Icon>
-										<span className={s.servicesContentListDescr}>
-											{text}
-										</span>
+										<span className={s.servicesContentListDescr}>{text}</span>
 									</li>
 								))}
 							</ul>

@@ -1,11 +1,11 @@
+import { LoaderText, SlicedText } from '@/components';
+import { Container, Icon, ImageContainer, Section, Title } from '@/ui';
+import b from '@/ui/Button/Button.module.scss';
+import { request } from '@/utils';
 import { RiArrowRightLine, RiChat3Line } from '@remixicon/react';
 import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { LoaderText, SlicedText } from '../../components';
-import { Container, Icon, ImageContainer, Section, Title } from '../../ui';
-import b from '../../ui/Button/Button.module.scss';
-import { request } from '../../utils';
 import s from './PortfolioPage.module.scss';
 
 export const PortfolioPage = () => {

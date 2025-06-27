@@ -1,4 +1,4 @@
-import { request } from '../../utils';
+import { request } from '@/utils';
 import { removeComment } from './remove-comment';
 
 export const removeCommentAsync = (postId, id) => (dispatch) => {

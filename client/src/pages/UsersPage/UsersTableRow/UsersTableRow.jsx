@@ -1,7 +1,7 @@
+import { Icon } from '@/ui';
+import { request } from '@/utils';
 import { RiDeleteBin3Line, RiSaveLine } from '@remixicon/react';
 import { useState } from 'react';
-import { Icon } from '../../../ui';
-import { request } from '../../../utils';
 import s from '../UserPage.module.scss';
 
 export const UsersTableRow = ({
@@ -32,10 +32,7 @@ export const UsersTableRow = ({
 			<td>{login}</td>
 			<td>{registeredAt}</td>
 			<td>
-				<select
-					className={s.selectRole}
-					value={selectedRoleId}
-					onChange={onRoleChange}>
+				<select className={s.selectRole} value={selectedRoleId} onChange={onRoleChange}>
 					{roles.map(({ id: roleId, name: roleName }) => (
 						<option key={roleId} value={roleId}>
 							{roleName}
@@ -45,19 +42,17 @@ export const UsersTableRow = ({
 			</td>
 			<td>
 				<Icon
-					color="darken"
+					color='darken'
 					className={s.iconAction}
 					disabled={isSaveButtonDisabled}
-					onClick={() => onRoleSave(id, selectedRoleId)}>
-					<RiSaveLine size="24" />
+					onClick={() => onRoleSave(id, selectedRoleId)}
+				>
+					<RiSaveLine size='24' />
 				</Icon>
 			</td>
 			<td>
-				<Icon
-					color="darken"
-					onClick={onUserRemove}
-					className={s.iconActionDelete}>
-					<RiDeleteBin3Line size="24" />
+				<Icon color='darken' onClick={onUserRemove} className={s.iconActionDelete}>
+					<RiDeleteBin3Line size='24' />
 				</Icon>
 			</td>
 		</tr>

@@ -1,4 +1,4 @@
-import { Container, Section, Title } from '../../ui';
+import { Container, Section, Title } from '@/ui';
 
 export const ErrorPage = ({ error }) => {
 	// const error = useRouteError();

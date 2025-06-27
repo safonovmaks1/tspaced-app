@@ -1,6 +1,6 @@
+import { Button, Container, Icon, ImageContainer, Section, Title } from '@/ui';
 import { RiFileEditLine } from '@remixicon/react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Container, Icon, ImageContainer, Section, Title } from '../../../../ui';
 import { SpecialPanel } from '../SpecialPanel/SpecialPanel';
 import s from './PostContent.module.scss';
 

@@ -1,4 +1,4 @@
-import { Title } from '../../ui';
+import { Title } from '@/ui';
 
 export const Error = ({ error }) => {
 	return (

@@ -1,7 +1,7 @@
+import { Accordion, LoaderText } from '@/components';
+import { Container, Section, Title } from '@/ui';
+import { request } from '@/utils';
 import { useEffect, useState } from 'react';
-import { Accordion, LoaderText } from '../../../../components';
-import { Container, Section, Title } from '../../../../ui';
-import { request } from '../../../../utils';
 import s from './QuestionsSections.module.scss';
 
 export const QuestionsSections = () => {
@@ -21,7 +21,7 @@ export const QuestionsSections = () => {
 				<Title>Часто задаваемые вопросы</Title>
 
 				{isLoading ? (
-					<LoaderText text="Загрузка данных..." />
+					<LoaderText text='Загрузка данных...' />
 				) : (
 					<Accordion items={faqs} />
 				)}

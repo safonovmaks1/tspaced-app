@@ -1,10 +1,10 @@
+import aboutImages from '@/assets/images/about.jpeg';
+import { LoaderText } from '@/components';
+import { Container, Icon, ImageContainer, Section, Title } from '@/ui';
+import { request } from '@/utils';
 import { RiArrowRightDownLine, RiCheckboxFill } from '@remixicon/react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import aboutImages from '../../../../assets/images/about.jpeg';
-import { LoaderText } from '../../../../components';
-import { Container, Icon, ImageContainer, Section, Title } from '../../../../ui';
-import { request } from '../../../../utils';
 import s from './AboutSection.module.scss';
 
 export const AboutSection = () => {

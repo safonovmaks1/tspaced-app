@@ -6,8 +6,8 @@ import {
 	selectModalOnCancel,
 	selectModalOnConfirm,
 	selectModalText,
-} from '../../store/selectors';
-import { Button } from '../../ui';
+} from '@/store/selectors';
+import { Button } from '@/ui';
 import s from './Modal.module.scss';
 
 export const Modal = () => {
@@ -35,8 +35,12 @@ export const Modal = () => {
 			<div className={s.modalBox}>
 				<h3 className={s.modalTitle}>{text}</h3>
 				<div className={s.modalButtons}>
-					<Button className={s.modalButton} onClick={onConfirm}>Да</Button>
-					<Button className={s.modalButton} onClick={onCancel}>Отмена</Button>
+					<Button className={s.modalButton} onClick={onConfirm}>
+						Да
+					</Button>
+					<Button className={s.modalButton} onClick={onCancel}>
+						Отмена
+					</Button>
 				</div>
 			</div>
 		</div>

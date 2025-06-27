@@ -1,9 +1,9 @@
+import { useNavigationMenu } from '@/hooks';
+import { Container, Icon, Logo, Section } from '@/ui';
+import { navLinks, socialLinks } from '@/utils';
 import { RiCodeSSlashLine } from '@remixicon/react';
 import cn from 'classnames';
 import { Link, NavLink } from 'react-router-dom';
-import { useNavigationMenu } from '../../hooks';
-import { Container, Icon, Logo, Section } from '../../ui';
-import { navLinks, socialLinks } from '../../utils';
 import s from './Footer.module.scss';
 
 export const Footer = () => {
@@ -13,8 +13,8 @@ export const Footer = () => {
 			<Section>
 				<Container>
 					<div className={s.footerContainer}>
-						<NavLink to="/" className={s.footerLogo}>
-							<Logo width="140px" />
+						<NavLink to='/' className={s.footerLogo}>
+							<Logo width='140px' />
 						</NavLink>
 
 						<ul className={s.footerNavList}>
@@ -22,13 +22,11 @@ export const Footer = () => {
 								<li key={link} className={s.navItem}>
 									<NavLink
 										className={({ isActive }) =>
-											cn(
-												s.footerNavLink,
-												isActive && s.footerNavLinkActive,
-											)
+											cn(s.footerNavLink, isActive && s.footerNavLinkActive)
 										}
 										to={link}
-										onClick={handleMenuLinkClick}>
+										onClick={handleMenuLinkClick}
+									>
 										{title}
 									</NavLink>
 								</li>
@@ -40,10 +38,11 @@ export const Footer = () => {
 								<Link
 									key={index}
 									href={social.url}
-									target="_blank"
-									rel="noopener noreferrer"
+									target='_blank'
+									rel='noopener noreferrer'
 									aria-label={social.ariaLabel}
-									className={s.footerSocialsLink}>
+									className={s.footerSocialsLink}
+								>
 									{social.icon}
 								</Link>
 							))}
@@ -52,19 +51,19 @@ export const Footer = () => {
 
 					<div className={s.footerContainer}>
 						<div className={s.footerCopy}>
-							&copy; {new Date().getFullYear()} «TSpace» All rights
-							reserved.
+							&copy; {new Date().getFullYear()} «TSpace» All rights reserved.
 						</div>
 
 						<div className={s.footerDev}>
 							Разработал:{' '}
 							<Link
 								className={s.footerDevLink}
-								to="https://t.me/MaksSafonov"
-								target="_blank"
-								rel="noopener noreferrer">
-								<Icon className={s.footerDevIcon} color="darken">
-									<RiCodeSSlashLine size="20" />
+								to='https://t.me/MaksSafonov'
+								target='_blank'
+								rel='noopener noreferrer'
+							>
+								<Icon className={s.footerDevIcon} color='darken'>
+									<RiCodeSSlashLine size='20' />
 								</Icon>
 								Maksim Safonov
 							</Link>
@@ -73,8 +72,9 @@ export const Footer = () => {
 						<div className={s.footerPolicy}>
 							<NavLink
 								className={s.footerDevLink}
-								to="/privacy"
-								rel="noopener noreferrer">
+								to='/privacy'
+								rel='noopener noreferrer'
+							>
 								Политика конфиденциальности
 							</NavLink>
 						</div>

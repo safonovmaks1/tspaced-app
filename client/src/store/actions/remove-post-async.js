@@ -1,3 +1,3 @@
-import { request } from '../../utils';
+import { request } from '@/utils';
 
 export const removePostAsync = (id) => () => request(`/posts/${id}`, 'DELETE');

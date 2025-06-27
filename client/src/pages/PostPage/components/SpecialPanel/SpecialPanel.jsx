@@ -1,12 +1,12 @@
+import { ROLE } from '@/constants';
+import { CLOSE_MODAL, openModal, removePostAsync } from '@/store/actions';
+import { selectUserRole } from '@/store/selectors';
+import { Button, Icon } from '@/ui';
+import { checkAccess } from '@/utils';
 import { RiCalendar2Line, RiDeleteBackLine } from '@remixicon/react';
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { ROLE } from '../../../../constants';
-import { CLOSE_MODAL, openModal, removePostAsync } from '../../../../store/actions';
-import { selectUserRole } from '../../../../store/selectors';
-import { Button, Icon } from '../../../../ui';
-import { checkAccess } from '../../../../utils';
 import s from './SpecialPanel.module.scss';
 
 export const SpecialPanel = ({ id, year, location, editButton }) => {

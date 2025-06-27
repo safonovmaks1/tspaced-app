@@ -1,8 +1,8 @@
+import { LoaderText } from '@/components';
+import { Container, Section, Title } from '@/ui';
+import { request } from '@/utils';
 import { useEffect, useState } from 'react';
-import { Container, Section, Title } from '../../../../ui';
-import { request } from '../../../../utils';
 import s from './WorksSection.module.scss';
-import { LoaderText } from '../../../../components'
 
 export const WorksSection = () => {
 	const [isLoading, setIsLoading] = useState(true);
@@ -20,7 +20,7 @@ export const WorksSection = () => {
 				<Title>Этапы работы</Title>
 
 				{isLoading ? (
-					<LoaderText text="Загрузка данных..." />
+					<LoaderText text='Загрузка данных...' />
 				) : (
 					<div className={s.workSections}>
 						{works.map((work, i) => {
@@ -32,15 +32,11 @@ export const WorksSection = () => {
 									<div>
 										{isLeft && (
 											<>
-												<h3 className={s.workTitle}>
-													{work.title}
-												</h3>
+												<h3 className={s.workTitle}>{work.title}</h3>
 												{work.works && (
 													<ul className={s.workList}>
 														{work.works.map((text, i) => (
-															<li
-																key={i}
-																className={s.workItem}>
+															<li key={i} className={s.workItem}>
 																{text}
 															</li>
 														))}
@@ -58,15 +54,11 @@ export const WorksSection = () => {
 									<div>
 										{!isLeft && (
 											<>
-												<h3 className={s.workTitle}>
-													{work.title}
-												</h3>
+												<h3 className={s.workTitle}>{work.title}</h3>
 												{work.works && (
 													<ul className={s.workList}>
 														{work.works.map((text, i) => (
-															<li
-																key={i}
-																className={s.workItem}>
+															<li key={i} className={s.workItem}>
 																{text}
 															</li>
 														))}

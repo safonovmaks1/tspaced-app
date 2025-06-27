@@ -1,7 +1,7 @@
+import { Icon } from '@/ui';
 import { RiArrowRightLine } from '@remixicon/react';
 import cn from 'classnames';
 import { useRef, useState } from 'react';
-import { Icon } from '../../ui';
 import s from './Accordion.module.scss';
 
 const AccordionItem = ({ title, text, isOpen, onClick }) => {
@@ -12,9 +12,10 @@ const AccordionItem = ({ title, text, isOpen, onClick }) => {
 			<div
 				className={cn(s.accordionHeader, isOpen && s.accordionHeaderActive)}
 				onClick={onClick}
-				role="button">
-				<Icon color="darken" className={cn(s.accordionIcon)}>
-					<RiArrowRightLine size="1.3rem" />
+				role='button'
+			>
+				<Icon color='darken' className={cn(s.accordionIcon)}>
+					<RiArrowRightLine size='1.3rem' />
 				</Icon>
 				<h2 className={s.accordionTitle}>{title}</h2>
 			</div>
@@ -26,10 +27,9 @@ const AccordionItem = ({ title, text, isOpen, onClick }) => {
 					isOpen && s.accordionContentContainerActive,
 				)}
 				style={
-					isOpen
-						? { height: contentHeight.current.scrollHeight }
-						: { height: '0px' }
-				}>
+					isOpen ? { height: contentHeight.current.scrollHeight } : { height: '0px' }
+				}
+			>
 				<p className={s.accordionText}>{text}</p>
 			</div>
 		</div>

@@ -1,3 +1,9 @@
+import { ROLE } from '@/constants';
+import { useNavigationMenu, useTheme } from '@/hooks';
+import { logout } from '@/store/actions';
+import { selectUserRole, selectUserSession } from '@/store/selectors';
+import { Container, Icon, Logo } from '@/ui';
+import { navLinks } from '@/utils';
 import {
 	RiArrowGoBackLine,
 	RiCloseLine,
@@ -10,17 +16,12 @@ import {
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
-import { ROLE } from '../../constants';
-import { useNavigationMenu, useTheme } from '../../hooks';
-import { logout } from '../../store/actions';
-import { selectUserRole, selectUserSession } from '../../store/selectors';
-import { Container, Icon, Logo } from '../../ui';
-import { navLinks } from '../../utils';
 import s from './Navigation.module.scss';
 
 export const Navigation = () => {
 	const { theme, toggleTheme } = useTheme();
-	const { isMenuOpen, handleMenuClose, handleMenuOpen, handleMenuLinkClick } = useNavigationMenu();
+	const { isMenuOpen, handleMenuClose, handleMenuOpen, handleMenuLinkClick } =
+		useNavigationMenu();
 
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -42,7 +43,9 @@ export const Navigation = () => {
 					{navLinks.map(({ link, title }) => (
 						<li key={link} className={s.navigationItem}>
 							<NavLink
-								className={({ isActive }) => cn(s.navigationLink, isActive && s.navigationLinkActive)}
+								className={({ isActive }) =>
+									cn(s.navigationLink, isActive && s.navigationLinkActive)
+								}
 								to={link}
 								onClick={handleMenuLinkClick}
 							>

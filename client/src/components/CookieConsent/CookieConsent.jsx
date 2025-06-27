@@ -2,8 +2,8 @@ import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 // import { Button } from '../Button/Button';
-// import { Button } from '../../shared';
-import { Button } from '../../ui';
+// import { Button } from '@/shared';
+import { Button } from '@/ui';
 import s from './Cookies.module.scss';
 
 const cookieStorage = {

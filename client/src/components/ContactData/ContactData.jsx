@@ -1,10 +1,10 @@
+import { Icon } from '@/ui';
 import {
 	RiInstagramLine,
 	RiMailLine,
 	RiPhoneLine,
 	RiTelegramLine,
 } from '@remixicon/react';
-import { Icon } from '../../ui';
 import s from './ContactData.module.scss';
 
 export const ContactData = () => {
@@ -29,11 +29,7 @@ export const ContactData = () => {
 				<div className={s.contactInfo}>
 					<h3 className={s.contactInfoTitle}>Мой номер:</h3>
 
-					<a
-						href='tel:+79818036636'
-						target='_blank'
-						className={s.contactInfoLink}
-					>
+					<a href='tel:+79818036636' target='_blank' className={s.contactInfoLink}>
 						<Icon color='darken'>
 							<RiPhoneLine size='1.3rem' />
 						</Icon>
