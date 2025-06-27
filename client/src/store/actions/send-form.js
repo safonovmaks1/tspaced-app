@@ -4,7 +4,7 @@ export const sendForm = (formData) => async (dispatch) => {
 	dispatch({ type: ACTION_TYPE.SEND_FORM_REQUEST });
 
 	try {
-		const response = await fetch('http://localhost:3001/api/send-to-telegram', {
+		const response = await fetch('/api/send-to-telegram', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(formData),
