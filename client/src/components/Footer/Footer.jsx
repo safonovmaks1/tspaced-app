@@ -10,7 +10,7 @@ export const Footer = () => {
 	const { handleMenuLinkClick } = useNavigationMenu();
 	return (
 		<footer className={s.footer}>
-			<Section>
+			<Section className={s.footerSection}>
 				<Container>
 					<div className={s.footerContainer}>
 						<NavLink to='/' className={s.footerLogo}>
@@ -35,7 +35,7 @@ export const Footer = () => {
 
 						<div className={s.footerSocials}>
 							{socialLinks.map((social, index) => (
-								<Link
+								<a
 									key={index}
 									href={social.url}
 									target='_blank'
@@ -44,7 +44,7 @@ export const Footer = () => {
 									className={s.footerSocialsLink}
 								>
 									{social.icon}
-								</Link>
+								</a>
 							))}
 						</div>
 					</div>

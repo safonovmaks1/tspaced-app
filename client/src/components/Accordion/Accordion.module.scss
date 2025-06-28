@@ -1,3 +1,5 @@
+@use '@/styles/mixins' as *;
+
 .accordion {
 	display: grid;
 	gap: 1.5rem;
@@ -15,7 +17,7 @@
 		background-color: var(--container-color);
 		border-radius: 0.3rem;
 
-		&:hover {
+		@include hover {
 			box-shadow: 0 2px 8px hsl(var(--hue) 4% 15% / 15%);
 		}
 	}

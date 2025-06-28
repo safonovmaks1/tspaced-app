@@ -1,4 +1,8 @@
 .footer {
+	&Section {
+		padding-top: 3rem;
+	}
+
 	&Container {
 		display: flex;
 		flex-direction: column;
