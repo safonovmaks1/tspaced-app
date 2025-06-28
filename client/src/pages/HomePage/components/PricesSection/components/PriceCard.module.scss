@@ -1,15 +1,16 @@
+@use '@/styles/mixins' as *;
+
 .card {
 	padding: 2.5rem 3rem 2rem 1.5rem;
 
 	background-color: var(--container-color);
 	border-radius: 1rem;
-	box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+	box-shadow: var(--shadow);
 
 	transition: transform 0.4s;
 
-	&:hover {
-		box-shadow: 0 4px 8px rgb(0 0 0 / 30%);
-		transform: translateY(-0.05rem);
+	@include hover {
+		transform: translateY(-0.3rem);
 	}
 
 	&Title {

@@ -25,7 +25,7 @@ export const ServicesSection = () => {
 				<Title>Мои услуги</Title>
 
 				<div className={s.servicesContainer}>
-					<div className={s.servicesContent}>
+					<article className={s.servicesContent}>
 						<IconDraft size='120px' className={s.servicesContentImages} />
 
 						<h3 className={s.servicesContentTitle}>
@@ -49,9 +49,9 @@ export const ServicesSection = () => {
 									.slice(0, 5)}
 							</ul>
 						)}
-					</div>
+					</article>
 
-					<div className={s.servicesContent}>
+					<article className={s.servicesContent}>
 						<IconPlan size='120px' className={s.servicesContentImages} />
 						<h3 className={s.servicesContentTitle}>
 							ЭСКИЗНЫЙ ПРОЕКТ <br />
@@ -74,9 +74,9 @@ export const ServicesSection = () => {
 									.slice(0, 14)}
 							</ul>
 						)}
-					</div>
+					</article>
 
-					<div className={s.servicesContent}>
+					<article className={s.servicesContent}>
 						<IconProject size='120px' className={s.servicesContentImages} />
 						<h3 className={s.servicesContentTitle}>
 							ПОЛНЫЙ ПРОЕКТ <br />
@@ -97,7 +97,7 @@ export const ServicesSection = () => {
 								))}
 							</ul>
 						)}
-					</div>
+					</article>
 				</div>
 			</Container>
 		</Section>

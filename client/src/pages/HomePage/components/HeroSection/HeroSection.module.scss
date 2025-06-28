@@ -13,7 +13,7 @@
 		width: 230px;
 		margin: 0 auto;
 
-		box-shadow: 0 4px 8px 4px rgb(0 0 0 / 30%);
+		box-shadow: var(--shadow);
 	}
 
 	&Data {

@@ -1,22 +1,25 @@
-import { Link } from 'react-router-dom';
+import { ScrollLink } from '@/components';
 import s from './SocialPanel.module.scss';
 
 export const SocialPanel = ({ socials }) => {
 	return (
 		<div className={s.socialPanel}>
-			<span className={s.socialPanelFollow}>Контакты</span>
+			<ScrollLink to='contact' className={s.socialPanelFollow}>
+				Контакты
+			</ScrollLink>
 
 			<div className={s.socialPanelLinks}>
 				{socials.map((link, id) => (
-					<Link
+					<a
 						key={id}
 						href={link.url}
-						target="_blank"
-						rel="noopener noreferrer"
+						target='_blank'
+						rel='noopener noreferrer'
 						aria-label={link.ariaLabel}
-						className={s.socialPanelLink}>
+						className={s.socialPanelLink}
+					>
 						{link.icon}
-					</Link>
+					</a>
 				))}
 			</div>
 		</div>

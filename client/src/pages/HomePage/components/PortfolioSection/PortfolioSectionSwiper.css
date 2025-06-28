@@ -13,6 +13,15 @@
 .swiper-button-prev::after,
 .swiper-button-next::after {
 	color: var(--first-color);
+	font-size: 1.8rem;
+
+	@media screen and (width >= 767px) {
+		font-size: 2.5rem;
+	}
+
+	@media screen and (width >= 992px) {
+		font-size: 3.5rem;
+	}
 }
 
 .swiper-pagination-bullet-active {

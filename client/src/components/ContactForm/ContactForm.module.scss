@@ -11,15 +11,6 @@
 	&Field {
 		position: relative;
 
-		.formLabel {
-			display: block;
-			margin-bottom: 6px;
-
-			color: var(--text-color);
-			font-weight: 500;
-			font-size: var(--smaller-font-size);
-		}
-
 		& textarea {
 			width: 100%;
 			min-height: 120px;
@@ -36,6 +27,15 @@
 
 			resize: vertical;
 		}
+	}
+
+	&Label {
+		display: block;
+		margin-bottom: 6px;
+
+		color: var(--text-color);
+		font-weight: 500;
+		font-size: var(--smaller-font-size);
 	}
 
 	&Check {
@@ -59,6 +59,11 @@
 				}
 			}
 		}
+	}
+
+	&ButtonContainer {
+		display: flex;
+		justify-content: center;
 	}
 
 	&Error {

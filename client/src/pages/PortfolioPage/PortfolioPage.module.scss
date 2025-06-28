@@ -1,3 +1,5 @@
+@use '@/styles/mixins' as *;
+
 .portfolio {
 	&List {
 		display: grid;
@@ -13,6 +15,13 @@
 
 		border: 1px solid var(--first-color);
 		border-radius: 0.75rem;
+		box-shadow: var(--shadow);
+
+		transition: transform 0.4s;
+
+		@include hover {
+			transform: translateY(-0.5rem);
+		}
 
 		@media screen and (width <= 767px) {
 			text-align: center;
@@ -53,6 +62,8 @@
 	}
 
 	&Button {
+		margin-inline: auto;
+
 		width: fit-content;
 
 		& span {
