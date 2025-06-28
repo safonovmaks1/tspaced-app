@@ -1,11 +1,6 @@
 import { useLayoutEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import {
-	createBrowserRouter,
-	createRoutesFromElements,
-	Route,
-	RouterProvider,
-} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ERROR } from './constants';
 import {
 	ContactPage,
@@ -21,27 +16,32 @@ import {
 import { Root } from './routes/root';
 import { setUser } from './store/actions';
 
-const router = createBrowserRouter(
-	createRoutesFromElements(
-		<Route path='/' element={<Root />}>
-			<Route index element={<HomePage />} />
-			<Route path='/login' element={<LoginPage />} />
-			<Route path='/register' element={<RegisterPage />} />
+const router = createBrowserRouter([
+	{
+		path: '/',
+		element: <Root />,
+		errorElement: <ErrorPage error={ERROR.PAGE_NOT_EXIST} />,
+		children: [
+			{ index: true, element: <HomePage /> },
+			{ path: 'login', element: <LoginPage /> },
+			{ path: 'register', element: <RegisterPage /> },
+			{ path: 'users', element: <UsersPage /> },
+			{ path: 'portfolio', element: <PortfolioPage /> },
 
-			<Route path='/users' element={<UsersPage />} />
-			<Route path='/portfolio' element={<PortfolioPage />} />
+			{
+				path: 'post',
+				children: [
+					{ index: true, element: <PostPage /> },
+					{ path: ':id', element: <PostPage /> },
+					{ path: ':id/edit', element: <PostPage /> },
+				],
+			},
 
-			<Route path='/post' element={<PostPage />} />
-			<Route path='/post/:id' element={<PostPage />} />
-			<Route path='/post/:id/edit' element={<PostPage />} />
-
-			<Route path='/contact' element={<ContactPage />} />
-			<Route path='/privacy' element={<PrivacyPage />} />
-
-			<Route path='*' element={<ErrorPage error={ERROR.PAGE_NOT_EXIST} />} />
-		</Route>,
-	),
-);
+			{ path: 'contact', element: <ContactPage /> },
+			{ path: 'privacy', element: <PrivacyPage /> },
+		],
+	},
+]);
 
 export const App = () => {
 	const dispatch = useDispatch();
@@ -58,5 +58,9 @@ export const App = () => {
 		dispatch(setUser({ ...currentUserData, roleId: Number(currentUserData.roleId) }));
 	}, [dispatch]);
 
-	return <RouterProvider router={router}></RouterProvider>;
+	return (
+		<>
+			<RouterProvider router={router}></RouterProvider>
+		</>
+	);
 };
