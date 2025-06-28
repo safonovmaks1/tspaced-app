@@ -4,7 +4,7 @@ import s from './ContactSection.module.scss';
 
 export const ContactSection = () => {
 	return (
-		<Section className={s.contact}>
+		<Section className={s.contact} id='contact'>
 			<Container>
 				<Title>Мои контакты</Title>
 				<div className={s.contactContainer}>

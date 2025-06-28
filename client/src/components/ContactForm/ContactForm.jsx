@@ -73,15 +73,6 @@ export const ContactForm = () => {
 		if (success) resetForm();
 	};
 
-	const formError =
-		errors?.name?.message ||
-		errors?.phone?.message ||
-		errors?.messenger?.message ||
-		errors?.message?.message ||
-		errors?.agreement?.message;
-
-	const errorMessage = formError;
-
 	return (
 		<>
 			{success ? (
@@ -109,6 +100,10 @@ export const ContactForm = () => {
 								autoComplete='name'
 								{...register('name')}
 							/>
+
+							{errors.name?.message && (
+								<div className={s.formError}>{errors.name.message}</div>
+							)}
 						</div>
 
 						<div className={s.formField}>
@@ -123,6 +118,10 @@ export const ContactForm = () => {
 								autoComplete='tel'
 								{...register('phone')}
 							/>
+
+							{errors.phone?.message && (
+								<div className={s.formError}>{errors.phone.message}</div>
+							)}
 						</div>
 
 						<div className={s.formField}>
@@ -171,6 +170,10 @@ export const ContactForm = () => {
 								autoComplete='off'
 								{...register('message')}
 							></textarea>
+
+							{errors.message?.message && (
+								<div className={s.formError}>{errors.message.message}</div>
+							)}
 						</div>
 
 						<div className={s.formItem}>
@@ -188,10 +191,14 @@ export const ContactForm = () => {
 									<Link to='/privacy'> обработку персональных данных</Link>*
 								</span>
 							</label>
+
+							{errors.agreement?.message && (
+								<div className={s.formError}>{errors.agreement.message}</div>
+							)}
 						</div>
 					</div>
 
-					<div>
+					<div className={s.formButtonContainer}>
 						<Button type='submit' width='w100' disabled={loading || !isValid}>
 							{loading ? 'Отправка...' : 'Заявка на проект'}
 							<Icon color='white'>
@@ -201,7 +208,6 @@ export const ContactForm = () => {
 					</div>
 
 					{error && <div className={s.formError}>{error}</div>}
-					{!error && errorMessage && <div className={s.formError}>{errorMessage}</div>}
 				</Form>
 			)}
 		</>

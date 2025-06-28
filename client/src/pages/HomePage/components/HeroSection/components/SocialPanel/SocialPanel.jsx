@@ -1,9 +1,12 @@
+import { ScrollLink } from '@/components';
 import s from './SocialPanel.module.scss';
 
 export const SocialPanel = ({ socials }) => {
 	return (
 		<div className={s.socialPanel}>
-			<span className={s.socialPanelFollow}>Контакты</span>
+			<ScrollLink to='contact' className={s.socialPanelFollow}>
+				Контакты
+			</ScrollLink>
 
 			<div className={s.socialPanelLinks}>
 				{socials.map((link, id) => (
