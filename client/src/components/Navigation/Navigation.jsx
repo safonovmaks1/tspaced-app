@@ -15,7 +15,7 @@ import {
 } from '@remixicon/react';
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import s from './Navigation.module.scss';
 
 export const Navigation = () => {
@@ -27,11 +27,15 @@ export const Navigation = () => {
 	const dispatch = useDispatch();
 	const roleId = useSelector(selectUserRole);
 	const session = useSelector(selectUserSession);
+	const location = useLocation();
+
+	const isHomePage = location.pathname === '/';
 
 	const onLogout = () => {
 		dispatch(logout(session));
 		sessionStorage.removeItem('userData');
 	};
+
 	return (
 		<Container className={s.navigation}>
 			<NavLink to='/' className={s.navigationLogo}>
@@ -63,11 +67,13 @@ export const Navigation = () => {
 			</div>
 
 			<div className={s.navigationBtns}>
-				<div className={s.navigationIcon} onClick={() => navigate(-1)}>
-					<Icon color='darken'>
-						<RiArrowGoBackLine size='27' />
-					</Icon>
-				</div>
+				{!isHomePage && (
+					<div className={s.navigationIcon} onClick={() => navigate(-1)}>
+						<Icon color='darken'>
+							<RiArrowGoBackLine size='27' />
+						</Icon>
+					</div>
+				)}
 
 				{roleId === ROLE.GUEST ? (
 					<Link to='/login' className={s.navigationIcon}>
