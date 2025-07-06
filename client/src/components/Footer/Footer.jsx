@@ -56,7 +56,7 @@ export const Footer = () => {
 
 						<div className={s.footerDev}>
 							Разработал:{' '}
-							<Link
+							<a
 								className={s.footerDevLink}
 								to='https://t.me/MaksSafonov'
 								target='_blank'
@@ -66,7 +66,7 @@ export const Footer = () => {
 									<RiCodeSSlashLine size='20' />
 								</Icon>
 								Maksim Safonov
-							</Link>
+							</a>
 						</div>
 
 						<div className={s.footerPolicy}>
