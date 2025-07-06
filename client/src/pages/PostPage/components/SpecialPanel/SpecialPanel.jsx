@@ -1,6 +1,6 @@
+import { CLOSE_MODAL, openModal, removePostAsync } from '@/actions';
 import { ROLE } from '@/constants';
-import { CLOSE_MODAL, openModal, removePostAsync } from '@/store/actions';
-import { selectUserRole } from '@/store/selectors';
+import { selectUserRole } from '@/selectors';
 import { Button, Icon } from '@/ui';
 import { checkAccess } from '@/utils';
 import { RiCalendar2Line, RiDeleteBackLine } from '@remixicon/react';

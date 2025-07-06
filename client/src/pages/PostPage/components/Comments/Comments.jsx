@@ -1,6 +1,6 @@
+import { addCommentAsync } from '@/actions';
 import { ROLE } from '@/constants';
-import { addCommentAsync } from '@/store/actions';
-import { selectUserRole } from '@/store/selectors';
+import { selectUserRole } from '@/selectors';
 import { Button, Container, Icon, Section } from '@/ui';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';

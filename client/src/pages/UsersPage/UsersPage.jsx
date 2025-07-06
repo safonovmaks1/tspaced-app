@@ -1,6 +1,6 @@
 import { PrivateContent } from '@/components';
 import { ROLE } from '@/constants';
-import { selectUserRole } from '@/store/selectors';
+import { selectUserRole } from '@/selectors';
 import { Container, Section, Title } from '@/ui';
 import { checkAccess, request } from '@/utils';
 import { useEffect, useState } from 'react';

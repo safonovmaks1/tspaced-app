@@ -1,7 +1,7 @@
+import { loadPostAsync, RESET_POST_DATA } from '@/actions';
 import { PrivateContent } from '@/components';
 import { ROLE } from '@/constants';
-import { loadPostAsync, RESET_POST_DATA } from '@/store/actions';
-import { selectPost } from '@/store/selectors';
+import { selectPost } from '@/selectors';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMatch, useParams } from 'react-router-dom';

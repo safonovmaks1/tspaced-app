@@ -1,4 +1,4 @@
-import { resetFormState, sendForm } from '@/store/actions';
+import { resetFormState, sendForm } from '@/actions';
 import { Button, Icon, Input } from '@/ui';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { RiArrowRightUpLine } from '@remixicon/react';

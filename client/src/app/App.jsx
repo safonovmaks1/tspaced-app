@@ -1,7 +1,8 @@
 import { useLayoutEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { ERROR } from './constants';
+import { setUser } from '../actions';
+import { ERROR } from '../constants';
 import {
 	ContactPage,
 	ErrorPage,
@@ -12,9 +13,8 @@ import {
 	PrivacyPage,
 	RegisterPage,
 	UsersPage,
-} from './pages';
-import { Root } from './routes/root';
-import { setUser } from './store/actions';
+} from '../pages';
+import { Root } from '../routes/root';
 
 const router = createBrowserRouter([
 	{

@@ -58,7 +58,7 @@ export const Footer = () => {
 							Разработал:{' '}
 							<a
 								className={s.footerDevLink}
-								to='https://t.me/MaksSafonov'
+								href='https://t.me/MaksSafonov'
 								target='_blank'
 								rel='noopener noreferrer'
 							>

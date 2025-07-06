@@ -1,7 +1,7 @@
+import { logout } from '@/actions';
 import { ROLE } from '@/constants';
 import { useNavigationMenu, useTheme } from '@/hooks';
-import { logout } from '@/store/actions';
-import { selectUserRole, selectUserSession } from '@/store/selectors';
+import { selectUserRole, selectUserSession } from '@/selectors';
 import { Container, Icon, Logo } from '@/ui';
 import { navLinks } from '@/utils';
 import {

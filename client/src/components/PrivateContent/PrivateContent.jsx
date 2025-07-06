@@ -1,6 +1,6 @@
 import { Error } from '@/components/Error/Error';
 import { ERROR } from '@/constants';
-import { selectUserRole } from '@/store/selectors';
+import { selectUserRole } from '@/selectors';
 import { checkAccess } from '@/utils';
 import { useSelector } from 'react-redux';
 
