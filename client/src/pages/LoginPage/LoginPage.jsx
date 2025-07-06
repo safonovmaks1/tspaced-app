@@ -1,8 +1,8 @@
+import { setUser } from '@/actions';
 import { Form } from '@/components';
 import { ROLE } from '@/constants';
 import { useResetForm } from '@/hooks';
-import { setUser } from '@/store/actions';
-import { selectUserRole } from '@/store/selectors';
+import { selectUserRole } from '@/selectors';
 import { Button, Container, Input, Section, Title } from '@/ui';
 import { request } from '@/utils';
 import { yupResolver } from '@hookform/resolvers/yup';

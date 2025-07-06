@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { setTheme } from '../store/actions';
-import { selectTheme } from '../store/selectors';
+import { setTheme } from '../actions';
+import { selectTheme } from '../selectors';
 
 export const useTheme = () => {
 	const dispatch = useDispatch();

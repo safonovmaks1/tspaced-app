@@ -6,7 +6,7 @@ import {
 	selectModalOnCancel,
 	selectModalOnConfirm,
 	selectModalText,
-} from '@/store/selectors';
+} from '@/selectors';
 import { Button } from '@/ui';
 import s from './Modal.module.scss';
 

@@ -1,4 +1,4 @@
-import { selectUserLogin } from '@/store/selectors';
+import { selectUserLogin } from '@/selectors';
 import { Container, Icon } from '@/ui';
 import { RiFileEditLine, RiUser2Line } from '@remixicon/react';
 import { useSelector } from 'react-redux';

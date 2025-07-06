@@ -1,6 +1,6 @@
+import { CLOSE_MODAL, openModal, removeCommentAsync } from '@/actions';
 import { ROLE } from '@/constants';
-import { CLOSE_MODAL, openModal, removeCommentAsync } from '@/store/actions';
-import { selectUserRole } from '@/store/selectors';
+import { selectUserRole } from '@/selectors';
 import { Icon } from '@/ui';
 import { RiCalendar2Line, RiDeleteBin3Line, RiUser3Line } from '@remixicon/react';
 import { useDispatch, useSelector } from 'react-redux';

@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { SpecialPanel } from '../SpecialPanel/SpecialPanel';
 
+import { savePostAsync } from '@/actions';
 import { Form } from '@/components';
-import { savePostAsync } from '@/store/actions';
 import { Button, Container, Icon, Input, Section } from '@/ui';
 import { RiSaveLine } from '@remixicon/react';
 import s from './PostForm.module.scss';
